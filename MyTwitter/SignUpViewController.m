@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "NSString+Utils.h"
 
 @interface SignUpViewController ()
 
@@ -34,4 +35,54 @@
 }
 */
 
+- (IBAction)signupButtonPressed:(UIButton *)sender {
+    NSString *fname=self.fnameField.text;
+    NSString *lname=self.lnameField.text;
+    NSString *email=self.emailidField.text;
+    NSString *password=self.passwordField.text;
+    NSString *confirmpassword=self.confirmPasswordField.text;
+   //creating dict
+    NSMutableDictionary *dict=[NSMutableDictionary new];
+    dict[@"fname"]=fname;
+    dict[@"lname"]=lname;
+    dict[@"email"]=email;
+    dict[@"password"]=password;
+    dict[@"confirmpassword"]=confirmpassword;
+    
+    if(!([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty])){
+       if([password isEqualToString:confirmpassword]){
+        [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
+
+            if(isSuccess==TRUE){
+                NSString *message=@"Login Successful";
+                [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
+            } else{
+                if(errorMessage != nil){
+                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+                }else{
+                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:[responseData objectForKey:@"error"] andActionTitle:@"ok" forView:self];
+
+                }}
+
+
+
+        }];
+
+
+
+
+       } else{
+           [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"password and confirm password fields did not match" andActionTitle:@"0k" forView:self];
+       }
+
+    }else{
+        [AlertManager showAlertPopupWithTitle:@"Oooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
+    }
+    
+    
+    
+    
+    
+    
+}
 @end

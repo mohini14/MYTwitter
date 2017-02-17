@@ -7,7 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlertManager.h"
+#import "UserServices.h"
 
 @interface SignUpViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *fnameField;
+
+
+@property (strong, nonatomic) IBOutlet UITextField *lnameField;
+
+@property (strong, nonatomic) IBOutlet UITextField *emailidField;
+
+@property (strong, nonatomic) IBOutlet UITextField *usernameField;
+
+
+@property (strong, nonatomic) IBOutlet UITextField *passwordField;
+
+@property (strong, nonatomic) IBOutlet UITextField *confirmPasswordField;
+
+- (IBAction)signupButtonPressed:(UIButton *)sender;
+
+
+
+
+
 
 @end
