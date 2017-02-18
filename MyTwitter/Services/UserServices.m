@@ -15,13 +15,15 @@
     dict[@"username"]=username;
     dict[@"password"]=password;
     NSString *urlString=[NSString stringWithFormat:@"%@%@",HOST,LOGIN_URL];
+    
+    
     [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data,NSURLResponse *response,NSError *error) {
             BOOL isSuccess;
 
             NSDictionary *responseData;
             NSString *errorMessage = nil;
 
-            if(error !=nil){
+            if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
                 isSuccess=false;
                 responseData=nil;
                 errorMessage=@"Server error";
@@ -54,7 +56,7 @@
         NSDictionary *responseData;
         NSString *errorMessage = nil;
 
-        if(error !=nil){
+        if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
             isSuccess=false;
             responseData=nil;
             errorMessage=@"Server error";

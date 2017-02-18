@@ -38,23 +38,24 @@
 - (IBAction)signupButtonPressed:(UIButton *)sender {
     NSString *fname=self.fnameField.text;
     NSString *lname=self.lnameField.text;
+    NSString *username = self.usernameField.text;
     NSString *email=self.emailidField.text;
     NSString *password=self.passwordField.text;
     NSString *confirmpassword=self.confirmPasswordField.text;
    //creating dict
     NSMutableDictionary *dict=[NSMutableDictionary new];
-    dict[@"fname"]=fname;
-    dict[@"lname"]=lname;
+    dict[@"first_name"]=fname;
+    dict[@"last_name"]=lname;
+    dict[@"username"]=username;
     dict[@"email"]=email;
     dict[@"password"]=password;
-    dict[@"confirmpassword"]=confirmpassword;
-    
-    if(!([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty])){
+
+    if(!(([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty]) || [username isempty])){
        if([password isEqualToString:confirmpassword]){
         [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
 
             if(isSuccess==TRUE){
-                NSString *message=@"Login Successful";
+                NSString *message=@"Registered Successfully";
                 [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
             } else{
                 if(errorMessage != nil){

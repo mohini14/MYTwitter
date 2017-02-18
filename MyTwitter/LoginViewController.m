@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "NSString+Utils.h"
 
 @interface LoginViewController ()
 
@@ -67,21 +68,26 @@
     NSString *password=self.passwordField.text;
     [[self userNameField] resignFirstResponder];
     [[self passwordField] resignFirstResponder];
+    
+    
+    if(!([username isempty] || [password isempty])) {
+        [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess, NSDictionary *responseData, NSString *errorMessage) {
+            if (isSuccess == TRUE) {
+                NSString *message = @"Login Successful";
+                [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
+            } else {
+                if (errorMessage != nil) {
+                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+                } else {
+                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:[responseData objectForKey:@"error"] andActionTitle:@"ok" forView:self];
 
-    [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
-        if(isSuccess==TRUE){
-            NSString *message=@"Login Successful";
-            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
-        } else{
-            if(errorMessage != nil){
-                [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
-            }else{
-                [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:[responseData objectForKey:@"error"] andActionTitle:@"ok" forView:self];
+                }
+            }
+        }];
 
-            }}
-    }];
-
-
+    }else{
+        [AlertManager showAlertPopupWithTitle:@"ooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
+    }
 }
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue{
