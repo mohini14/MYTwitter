@@ -18,30 +18,8 @@
     
     
     [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data,NSURLResponse *response,NSError *error) {
-            BOOL isSuccess;
-
-            NSDictionary *responseData;
-            NSString *errorMessage = nil;
-
-            if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
-                isSuccess=false;
-                responseData=nil;
-                errorMessage=@"Server error";
-
-            }else {
-
-                responseData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-
-                if( [(NSHTTPURLResponse *)response statusCode]==200){         // http code for error
-                    isSuccess=true;
-                }else{
-                    isSuccess=false;
-                }
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                callBackFromVC(isSuccess, responseData,errorMessage);
-
-            });
+        
+        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromVC];
     }];
 }
 
@@ -51,20 +29,27 @@
     NSString *urlString=[NSString stringWithFormat:@"%@%@",HOST,REG_URL];
     [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data,NSURLResponse *response,NSError *error){
 
-        BOOL isSuccess;
+        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromVC];
 
+    }];
+}
+
++(void)passresponse:(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error andCompletionHandler :(CallBackToMainVC )callBackFromVC{
+
+        
+        BOOL isSuccess;
         NSDictionary *responseData;
         NSString *errorMessage = nil;
-
+        
         if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
             isSuccess=false;
             responseData=nil;
             errorMessage=@"Server error";
-
+            
         }else {
-
+            
             responseData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-
+            
             if( [(NSHTTPURLResponse *)response statusCode]==200){         // http code for error
                 isSuccess=true;
             }else{
@@ -73,18 +58,17 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             callBackFromVC(isSuccess, responseData,errorMessage);
-
+            
         });
+        
+        
+        
+        
+        
+        
+        
 
 
 
-
-
-
-
-    }];
 }
-
-
-
 @end

@@ -40,6 +40,8 @@
     NSString *lname=self.lnameField.text;
     NSString *username = self.usernameField.text;
     NSString *email=self.emailidField.text;
+    if([AlertManager validateEmail:email]){
+    
     NSString *password=self.passwordField.text;
     NSString *confirmpassword=self.confirmPasswordField.text;
    //creating dict
@@ -80,7 +82,9 @@
         [AlertManager showAlertPopupWithTitle:@"Oooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
     }
     
-    
+    }else{
+        [AlertManager showAlertPopupWithTitle:@"Ooops" andMessage:@"Enter a valid email" andActionTitle:@"ok" forView:self];
+    }
     
     
     

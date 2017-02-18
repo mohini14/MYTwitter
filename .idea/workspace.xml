@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14bc6cc9-6dcc-4608-ba59-4ee0ca3ae064" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.xcworkspace/xcuserdata/mohini.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.xcworkspace/xcuserdata/mohini.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/LoginViewController.h" afterPath="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/LoginViewController.m" afterPath="$PROJECT_DIR$/MyTwitter/LoginViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/SignUpViewController.m" afterPath="$PROJECT_DIR$/MyTwitter/SignUpViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.h" afterPath="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.m" afterPath="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +33,9 @@
       <file leaf-file-name="LoginViewController.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="88" column="135" lean-forward="false" selection-start-line="88" selection-start-column="135" selection-end-line="88" selection-end-column="135" />
-              <folding>
-                <element signature="e#135#166#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1575">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -37,8 +43,8 @@
       <file leaf-file-name="SignUpViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/SignUpViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+            <state relative-caret-position="386">
+              <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding>
                 <element signature="e#136#168#0" expanded="true" />
               </folding>
@@ -89,9 +95,11 @@
       <file leaf-file-name="LoginViewController.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding>
+                <element signature="e#135#158#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,8 +117,8 @@
       <file leaf-file-name="UserServices.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="171" lean-forward="false" selection-start-line="12" selection-start-column="157" selection-end-line="12" selection-end-column="171" />
+            <state relative-caret-position="-76">
+              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -119,10 +127,11 @@
       <file leaf-file-name="UserServices.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="108" lean-forward="false" selection-start-line="15" selection-start-column="108" selection-end-line="15" selection-end-column="108" />
+            <state relative-caret-position="285">
+              <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
               <folding>
                 <element signature="e#92#125#0" expanded="true" />
+                <marker date="1487403910000" expanded="true" signature="383:854" ph="..." />
               </folding>
             </state>
           </provider>
@@ -144,14 +153,14 @@
         <option value="$PROJECT_DIR$/MyTwitter/Services/HTTPServices.h" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.m" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/AlertManager.h" />
-        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
         <option value="$PROJECT_DIR$/MyTwitter/Services/HTTPServices.m" />
-        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.h" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m" />
         <option value="$PROJECT_DIR$/MyTwitter/SignUpViewController.h" />
         <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
         <option value="$PROJECT_DIR$/MyTwitter/SignUpViewController.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
         <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.m" />
       </list>
     </option>
@@ -336,15 +345,15 @@
       <updated>1487349348887</updated>
       <workItem from="1487349350161" duration="7163000" />
       <workItem from="1487358687497" duration="3947000" />
-      <workItem from="1487401504322" duration="449000" />
+      <workItem from="1487401504322" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11559000" />
+    <option name="totallyTimeSpent" value="13082000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="821" extended-state="1" />
+    <frame x="0" y="23" width="1366" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -382,9 +391,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="80" column="14" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="80" selection-end-column="14" />
-          <folding>
-            <element signature="e#135#166#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -434,7 +441,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#135#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -460,6 +469,7 @@
           <caret line="15" column="108" lean-forward="false" selection-start-line="15" selection-start-column="108" selection-end-line="15" selection-end-column="108" />
           <folding>
             <element signature="e#92#125#0" expanded="true" />
+            <marker date="1487403910000" expanded="true" signature="383:854" ph="..." />
           </folding>
         </state>
       </provider>
@@ -468,9 +478,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#135#166#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -487,7 +495,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="153" lean-forward="false" selection-start-line="11" selection-start-column="153" selection-end-line="11" selection-end-column="153" />
           <folding>
-            <element signature="e#92#125#0" expanded="true" />
+            <element signature="e#92#125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -496,7 +504,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#135#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,6 +532,7 @@
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding>
             <element signature="e#92#125#0" expanded="true" />
+            <marker date="1487403910000" expanded="true" signature="383:854" ph="..." />
           </folding>
         </state>
       </provider>
@@ -545,16 +556,8 @@
         <state relative-caret-position="165">
           <caret line="11" column="153" lean-forward="false" selection-start-line="11" selection-start-column="153" selection-end-line="11" selection-end-column="153" />
           <folding>
-            <element signature="e#92#125#0" expanded="true" />
+            <element signature="e#92#125#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,14 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="171" lean-forward="false" selection-start-line="12" selection-start-column="157" selection-end-line="12" selection-end-column="171" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/SignUpViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -606,33 +601,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="108" lean-forward="false" selection-start-line="15" selection-start-column="108" selection-end-line="15" selection-end-column="108" />
-          <folding>
-            <element signature="e#92#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/SignUpViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        <state relative-caret-position="386">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
             <element signature="e#136#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
+          <folding>
+            <element signature="e#92#125#0" expanded="true" />
+            <marker date="1487403910000" expanded="true" signature="383:854" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="e#135#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="88" column="135" lean-forward="false" selection-start-line="88" selection-start-column="135" selection-end-line="88" selection-end-column="135" />
-          <folding>
-            <element signature="e#135#166#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1575">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

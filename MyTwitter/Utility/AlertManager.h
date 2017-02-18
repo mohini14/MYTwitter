@@ -11,4 +11,6 @@
 
 + (void)showAlertPopupWithTitle:(NSString *)title andMessage:(NSString *)message andActionTitle:(NSString *)actionTitle forView:(UIViewController *)view;
 
++ (BOOL)validateEmail:(NSString *)inputText ;
+
 @end

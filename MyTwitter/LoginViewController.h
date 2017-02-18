@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UserServices.h"
 #import "AlertManager.h"
+#import "NSString+Utils.h"
+#import "UserProfile.h"
 
 @interface LoginViewController : UIViewController
 

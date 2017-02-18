@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "NSString+Utils.h"
+
 
 @interface LoginViewController ()
 
@@ -75,6 +75,8 @@
             if (isSuccess == TRUE) {
                 NSString *message = @"Login Successful";
                 [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
+                
+                
             } else {
                 if (errorMessage != nil) {
                     [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
@@ -89,6 +91,19 @@
         [AlertManager showAlertPopupWithTitle:@"ooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
     }
 }
+
+#pragma for segues//
+//
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([segue.identifier isEqualToString:@"Login to User Profile"]){
+//        UserProfile *destSegue=segue.destinationViewController;
+//
+//
+//
+//
+//    }
+//}
+
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue{
     
