@@ -22,6 +22,7 @@
     NSURLSessionConfiguration * defaultSessionConfiguration=[NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession=[NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
     NSURLSessionDataTask *dataTask=[defaultSession dataTaskWithURL:url completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
+        NSLog(@"HTTP GET LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
         completionHandlerCallBack(data,response,error);
     }];
     [dataTask resume];
@@ -42,7 +43,7 @@
     [urlRequest setHTTPBody:nsPostData];
     [urlRequest setValue:@"application/json:charset=UTF_8" forHTTPHeaderField:@"content-type"];
     NSURLSessionDataTask *dataTask= [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
-        NSLog(@"HTTP LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
+        NSLog(@"HTTP POST LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
         completionHandlerCallBack(data,response,error);
     }];
     [dataTask resume];

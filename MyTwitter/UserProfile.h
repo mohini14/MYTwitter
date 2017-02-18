@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "UserServices.h"
+#import "AlertManager.h"
 
-@interface UserProfile : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface UserProfile : UIViewController<UITableViewDelegate,UITableViewDataSource>{
+    
+    
+}
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
@@ -18,6 +23,7 @@
 -(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue;
 
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 

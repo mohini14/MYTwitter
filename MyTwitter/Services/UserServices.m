@@ -60,15 +60,17 @@
             callBackFromVC(isSuccess, responseData,errorMessage);
             
         });
-        
-        
-        
-        
-        
-        
-        
+    
 
 
 
+}
+
++(void)getAllPost :(void (^)(BOOL isSuccess,NSDictionary*data,NSString *errorMessage))callBackFromUserProfile{
+    NSString *urlString=[NSString stringWithFormat:@"%@%@",HOST,ALL_POSTS];
+    [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromUserProfile];
+    }];
+    
 }
 @end

@@ -391,6 +391,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="480" id="Wtr-xO-EPZ"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="0en-8o-95p">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0en-8o-95p" id="Ve2-8W-Be1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD A NEW POST HERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmM-DQ-BzS">
                                 <rect key="frame" x="10" y="612" width="223" height="55"/>
@@ -425,6 +435,7 @@
                     <connections>
                         <outlet property="emailIdLabel" destination="eGa-vo-7Fo" id="zGs-nR-fMA"/>
                         <outlet property="nameLabel" destination="ms6-dJ-mEX" id="K3g-gA-MYg"/>
+                        <outlet property="tableView" destination="k1m-gw-Thc" id="3dU-CZ-vu2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lew-Mu-7SG" userLabel="First Responder" sceneMemberID="firstResponder"/>

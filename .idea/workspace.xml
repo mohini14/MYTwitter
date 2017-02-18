@@ -6,9 +6,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/LoginViewController.h" afterPath="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/LoginViewController.m" afterPath="$PROJECT_DIR$/MyTwitter/LoginViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/HTTPServices.m" afterPath="$PROJECT_DIR$/MyTwitter/Services/HTTPServices.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/UserProfile.h" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/UserProfile.m" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.m" />
     </list>
@@ -25,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginViewController.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="44" lean-forward="false" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+            <state relative-caret-position="386">
+              <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserProfile.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserProfile.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="390">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -58,9 +58,11 @@
       <file leaf-file-name="UserProfile.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding>
+                <element signature="e#127#150#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,21 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUpViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyTwitter/SignUpViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HTTPServices.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/HTTPServices.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="43" column="71" lean-forward="false" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+            <state relative-caret-position="536">
+              <caret line="44" column="71" lean-forward="false" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -100,8 +92,8 @@
       <file leaf-file-name="LoginViewController.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+            <state relative-caret-position="360">
+              <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
               <folding>
                 <element signature="e#135#158#0" expanded="true" />
               </folding>
@@ -112,8 +104,18 @@
       <file leaf-file-name="UserServices.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-76">
-              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="956">
+              <caret line="71" column="92" lean-forward="true" selection-start-line="71" selection-start-column="92" selection-end-line="71" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserPost.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyTwitter/UserPost.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,8 +124,8 @@
       <file leaf-file-name="UserServices.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="84" lean-forward="false" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+            <state relative-caret-position="450">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#92#125#0" expanded="true" />
               </folding>
@@ -152,12 +154,12 @@
         <option value="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m" />
         <option value="$PROJECT_DIR$/MyTwitter/SignUpViewController.h" />
         <option value="$PROJECT_DIR$/MyTwitter/SignUpViewController.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
+        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
         <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
         <option value="$PROJECT_DIR$/MyTwitter/UserProfile.h" />
-        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
-        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.h" />
         <option value="$PROJECT_DIR$/MyTwitter/UserProfile.m" />
-        <option value="$PROJECT_DIR$/MyTwitter/LoginViewController.m" />
       </list>
     </option>
   </component>
@@ -341,15 +343,15 @@
       <updated>1487349348887</updated>
       <workItem from="1487349350161" duration="7163000" />
       <workItem from="1487358687497" duration="3947000" />
-      <workItem from="1487401504322" duration="5339000" />
+      <workItem from="1487401504322" duration="8855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16449000" />
+    <option name="totallyTimeSpent" value="19965000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="821" extended-state="1" />
+    <frame x="0" y="23" width="1366" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -591,14 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/Services/HTTPServices.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -609,52 +603,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/Services/HTTPServices.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="43" column="71" lean-forward="false" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+        <state relative-caret-position="536">
+          <caret line="44" column="71" lean-forward="false" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="84" lean-forward="false" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
-          <folding>
-            <element signature="e#92#125#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+        <state relative-caret-position="360">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
           <folding>
             <element signature="e#135#158#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.m">
+    <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="386">
+          <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
+    <entry file="file://$PROJECT_DIR$/MyTwitter/UserPost.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="44" lean-forward="false" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#127#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#92#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="956">
+          <caret line="71" column="92" lean-forward="true" selection-start-line="71" selection-start-column="92" selection-end-line="71" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/UserProfile.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding />
         </state>
       </provider>
