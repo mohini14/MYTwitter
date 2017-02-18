@@ -1,23 +1,21 @@
 //
-//  UserProfile.m
+//  UserPost.m
 //  MyTwitter
 //
 //  Created by Mohini on 18/02/17.
 //  Copyright © 2017 Mohini. All rights reserved.
 //
 
-#import "UserProfile.h"
+#import "UserPost.h"
 
-@interface UserProfile ()
+@interface UserPost ()
 
 @end
 
-@implementation UserProfile
+@implementation UserPost
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _nameLabel.text= _dict[@"name"];
-    _emailIdLabel.text= _dict[@"email"];
     // Do any additional setup after loading the view.
 }
 
@@ -35,9 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
--(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue{
-    
-}
 
 @end

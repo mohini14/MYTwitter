@@ -12,6 +12,7 @@
 #import "NSString+Utils.h"
 #import "UserProfile.h"
 
+
 @interface LoginViewController : UIViewController
 
 
@@ -21,6 +22,8 @@
 
 @property (strong, nonatomic) IBOutlet UISwitch *keepMeLoggedInSwitch;
 
+@property (weak, nonatomic) NSDictionary *userProfileData;
+
 
 
 
@@ -29,15 +32,11 @@
 
 
 - (IBAction)loginButtonPressed:(UIButton *)sender;
+-(IBAction)unwindFromUserProfileVC:(UIStoryboardSegue *)unwindSegue;
+-(IBAction)unwindFromHelpVC:(UIStoryboardSegue *)unwindSegue;
 
 
-
-
-
-
-
-
-
+- (void)preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData;
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue;
 @end
