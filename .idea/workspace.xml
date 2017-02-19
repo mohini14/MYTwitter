@@ -4,16 +4,14 @@
     <list default="true" id="14bc6cc9-6dcc-4608-ba59-4ee0ca3ae064" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.xcworkspace/xcuserdata/mohini.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.xcworkspace/xcuserdata/mohini.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/MyTwitter.xcodeproj/xcuserdata/mohini.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/MyTwitter/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/CommentViewController.h" afterPath="$PROJECT_DIR$/MyTwitter/CommentViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/CommentViewController.m" afterPath="$PROJECT_DIR$/MyTwitter/CommentViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" afterPath="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/UserProfile.h" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/UserProfile.m" afterPath="$PROJECT_DIR$/MyTwitter/UserProfile.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.h" afterPath="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m" afterPath="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="356">
-              <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+              <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -53,7 +51,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
               <caret line="29" column="75" lean-forward="false" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
-              <folding />
+              <folding>
+                <marker date="1487502544000" expanded="true" signature="145:636" ph="..." />
+                <marker date="1487502544000" expanded="true" signature="173:317" ph="{...}" />
+                <marker date="1487502544000" expanded="true" signature="333:470" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +65,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
+              <folding>
+                <marker date="1487504767000" expanded="true" signature="306:755" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServices.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserServices.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="401">
-              <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+              <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
               <folding>
                 <element signature="e#92#116#0" expanded="true" />
               </folding>
@@ -100,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentViewController.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommentViewController.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyTwitter/CommentViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="35" column="74" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+            <state relative-caret-position="161">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,11 +161,11 @@
         <option value="$PROJECT_DIR$/MyTwitter/UserProfile.h" />
         <option value="$PROJECT_DIR$/MyTwitter/UserProfile.m" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.h" />
-        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
         <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.h" />
         <option value="$PROJECT_DIR$/MyTwitter/CommentViewController.h" />
-        <option value="$PROJECT_DIR$/MyTwitter/CommentViewController.m" />
         <option value="$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/Services/UserServices.m" />
+        <option value="$PROJECT_DIR$/MyTwitter/CommentViewController.m" />
       </list>
     </option>
   </component>
@@ -346,15 +350,15 @@
       <updated>1487349348887</updated>
       <workItem from="1487349350161" duration="7163000" />
       <workItem from="1487358687497" duration="3947000" />
-      <workItem from="1487401504322" duration="18354000" />
+      <workItem from="1487401504322" duration="18924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29464000" />
+    <option name="totallyTimeSpent" value="30034000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="137" y="53" width="1366" height="821" extended-state="0" />
+    <frame x="137" y="53" width="1366" height="821" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -641,7 +645,7 @@
     <entry file="file://$PROJECT_DIR$/MyTwitter/LoginViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
-          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -658,7 +662,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1487504767000" expanded="true" signature="306:755" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -670,19 +676,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTwitter/CommentViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="35" column="74" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyTwitter/Utility/NSString+Utils.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="75" lean-forward="false" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
-          <folding />
+          <folding>
+            <marker date="1487502544000" expanded="true" signature="145:636" ph="..." />
+            <marker date="1487502544000" expanded="true" signature="173:317" ph="{...}" />
+            <marker date="1487502544000" expanded="true" signature="333:470" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -699,10 +701,18 @@
     <entry file="file://$PROJECT_DIR$/MyTwitter/Services/UserServices.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
-          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
           <folding>
             <element signature="e#92#116#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTwitter/CommentViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

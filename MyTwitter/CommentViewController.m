@@ -39,6 +39,31 @@
     return cell;
 }
 
+- (IBAction)okCommentButtonPressed:(id)sender {
+    
+    NSString *addCommentText=self.addCommentTextField.text;
+     NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
+    [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+
+        if (isSuccess == TRUE) {
+            
+            [self populateData];
+            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
+            [[self addCommentTextField]resignFirstResponder];
+            self.addCommentTextField.text=nil;
+        
+        
+        } else if (isSuccess == FALSE && errorMessage != nil) {
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
+        } else {
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
+        }
+
+    }];
+    
+    
+}
+
 -(void)populateData{
 
         NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
@@ -58,6 +83,7 @@
             }
 
             [self.tableView reloadData];
+            self.postLabel.text=data[@"result"][@"post"];//updating postlabel field again after populating data
         }else if(isSuccess==FALSE && errorMessage!=nil){
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
         } else{
@@ -66,6 +92,7 @@
 
     }];
 }
+
 
 
 @end

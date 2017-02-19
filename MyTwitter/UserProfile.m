@@ -93,12 +93,15 @@
 
 -(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue{
     if([segue.identifier isEqualToString:@"unwindFromUSerPost"]){
-        [self populateData];
+        [self populateData];//getting the new post added from userPost VC so that can be added to tableview
     
         
     }
 }
 
+-(IBAction)unwindFromCommentVC:(UIStoryboardSegue *)segue{
+    
+}
 
 
 -(void) onClickFromSelectedRowToComments{
@@ -117,7 +120,7 @@
     }
 
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
-        CommentViewController *destination = segue.destinationViewController;
+        CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
         
         NSDictionary *tempDict = [_tableData objectAtIndex:clickedRowNumber];
         destination.dict = tempDict;

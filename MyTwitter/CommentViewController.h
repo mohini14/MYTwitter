@@ -15,11 +15,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) NSMutableArray *tableData;
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
+@property (strong, nonatomic) IBOutlet UITextField *addCommentTextField;
 @property (strong, nonatomic) NSDictionary *dict;
 
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)okCommentButtonPressed:(id)sender;
 
 
 

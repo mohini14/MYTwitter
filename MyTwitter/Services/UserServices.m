@@ -97,4 +97,19 @@
     }];
 
 }
-@end
+
+
+//for adding comment to a post
++(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC{
+    
+    NSDictionary *dict=@{
+                         @"comment":comment
+                         };
+    
+    NSString *urlString=[[[HOST append:ADD_COMMENT_WITH_POST_ID]stringByReplacingOccurrencesOfString:@"<username>" withString:userName]stringByReplacingOccurrencesOfString:@"<post id>" withString:postId];
+    [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromCommentVC];
+        
+    }];
+}@end

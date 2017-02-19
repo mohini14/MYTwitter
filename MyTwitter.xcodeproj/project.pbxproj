@@ -50,7 +50,7 @@
 		1513DC531E589E7B00FB57AC /* UserPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPost.m; sourceTree = "<group>"; };
 		1513DC551E58B11400FB57AC /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = star.jpeg; path = ../../../../Downloads/star.jpeg; sourceTree = "<group>"; };
 		1513DC571E5993BA00FB57AC /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
-		1513DC581E5993BA00FB57AC /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		1513DC581E5993BA00FB57AC /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; tabWidth = 5; };
 		151485761E5850E0005F4BA5 /* FB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FB.jpg; path = ../../../../Downloads/FB.jpg; sourceTree = "<group>"; };
 		151485781E58564C005F4BA5 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		151485791E58564C005F4BA5 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
