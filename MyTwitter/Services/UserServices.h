@@ -11,6 +11,7 @@
 #define REG_URL @"/user"
 #define ALL_POSTS @"/post"
 #define NEW_POST_URL @"/user/<username>/post"
+#define GET_POST_URL @"/post/<post_id>"
 
 
 
@@ -25,7 +26,7 @@ typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * er
 +(void)getAllPost :(void (^)(BOOL isSuccess,NSDictionary*data,NSString *errorMessage))callBackFromUserProfile;
 //+(void) submitPost:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;
 +(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;;
-
++(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC;
 
 
 @end

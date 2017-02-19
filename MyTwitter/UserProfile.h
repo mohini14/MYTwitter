@@ -26,6 +26,7 @@
 @property(strong,nonatomic) NSDictionary *userProfileData;
 
 @property(nonatomic, strong) NSMutableArray *tableData;
+-(void) onClickFromSelectedRowToComments;
 
 //- (IBAction)addNewPostButton:(UIButton *)sender;
 -(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue;

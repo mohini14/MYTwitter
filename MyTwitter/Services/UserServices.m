@@ -4,6 +4,7 @@
 //
 
 #import "UserServices.h"
+#import "NSString+Utils.h"
 
 
 @implementation UserServices {
@@ -67,7 +68,7 @@
 }
 
 +(void)getAllPost :(void (^)(BOOL isSuccess,NSDictionary*data,NSString *errorMessage))callBackFromUserProfile{
-    NSString *urlString=[NSString stringWithFormat:@"%@%@",HOST,ALL_POSTS];
+    NSString *urlString=[HOST append:ALL_POSTS];
     [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromUserProfile];
     }];
@@ -80,11 +81,20 @@
             @"post":post
     };
     
-    NSString *urlString=[[NSString stringWithFormat:@"%@%@",HOST,NEW_POST_URL]stringByReplacingOccurrencesOfString:@"<username>" withString:username];//replacing username from url
+    NSString *urlString=[[HOST append:NEW_POST_URL]stringByReplacingOccurrencesOfString:@"<username>" withString:username];//replacing username from url
     [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data,NSURLResponse *response,NSError *error){
         
         [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromUserpost];
         
     }];
+}
+
++(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC
+{
+    NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
+    [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromCommentVC];
+    }];
+
 }
 @end

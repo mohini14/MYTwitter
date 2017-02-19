@@ -46,8 +46,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     clickedRowNumber = indexPath.row;
-    int x = 10;
-
+    [self onClickFromSelectedRowToComments];
+    
 }
 
 
@@ -74,6 +74,7 @@
                         @"date":obj[@"created_at"],
                         @"username":obj[@"user"][@"username"],
                         @"post_id":obj[@"id"]
+                    
                 };
                 [self.tableData addObject:tempDict];
             }
@@ -100,29 +101,28 @@
 
 
 
-//void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
-//    self.userProfileData = responseData;
-//    [self performSegueWithIdentifier:@"loggedInSeague" sender:self];
-//
-//}
+-(void) onClickFromSelectedRowToComments{
+
+    [self performSegueWithIdentifier:@"UserPofileToComment" sender:self];
+
+}
 
 
 
-//
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if([segue.identifier isEqualToString:@"UserProfileToUserPost"]){
-//        UserPost *up = segue.destinationViewController.childViewControllers[0];
-//        up.userProfileDict = self.dict;
-//    }
-//
-//    if([segue.identifier isEqualToString:@"UserPofileToComment"]){
-//        CommentViewController *destination = segue.destinationViewController;
-//        NSDictionary *tempDict = @{
-//                @"username":
-//        };
-//
-//        };
-//        destination.dict = tempDict;
-//}
 
-@end
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"UserProfileToUserPost"]){
+        UserPost *up = segue.destinationViewController.childViewControllers[0];
+        up.userProfileDict = self.dict;
+    }
+
+    if([segue.identifier isEqualToString:@"UserPofileToComment"]){
+        CommentViewController *destination = segue.destinationViewController;
+        
+        NSDictionary *tempDict = [_tableData objectAtIndex:clickedRowNumber];
+        destination.dict = tempDict;
+}
+
+}
+    @end
+

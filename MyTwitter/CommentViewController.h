@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserServices.h"
+#import "AlertManager.h"
 
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property (strong, nonatomic) NSMutableArray *tableData;
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
 @property (strong, nonatomic) NSDictionary *dict;
 
@@ -21,7 +23,7 @@
 
 
 
-
+-(void)populateData;
 
 
 
