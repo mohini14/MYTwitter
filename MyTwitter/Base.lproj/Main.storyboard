@@ -418,7 +418,8 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IWR-Gp-GDy" kind="show" identifier="UserProfile to UserPost" id="06b-dh-dQ4"/>
+                                    <action selector="addNewPostButton:" destination="7Zk-ZD-dHI" eventType="touchUpInside" id="DzR-4L-5km"/>
+                                    <segue destination="j8j-ii-Mzl" kind="show" id="Dha-9K-Aoh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -456,16 +457,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-Zz-oKL">
-                                <rect key="frame" x="16" y="112" width="343" height="150"/>
+                                <rect key="frame" x="16" y="68" width="343" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="3SI-pb-Dww"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WRITE YOUR POST HERE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3J-MF-3kZ">
-                                <rect key="frame" x="16" y="64" width="343" height="40"/>
+                                <rect key="frame" x="16" y="20" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uv9-Dc-Bpa"/>
                                 </constraints>
@@ -499,31 +500,20 @@
                                 <segue destination="6Dd-DZ-cAn" kind="unwind" unwindAction="unwindFromUserPost:" id="cRu-gs-Mvb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8yI-sx-1HO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8yI-sx-1HO">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="j8j-ii-Mzl" id="4Bv-2b-ksG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="qfk-Zz-oKL" id="pp4-UE-isx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4c-gR-Bpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6Dd-DZ-cAn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2896.8000000000002" y="214.54272863568218"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lic-qc-50S">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IWR-Gp-GDy" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nDU-y8-AQl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="j8j-ii-Mzl" kind="relationship" relationship="rootViewController" id="CTx-Ag-owM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rlW-1f-j2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1957.5999999999999" y="214.54272863568218"/>
+            <point key="canvasLocation" x="2122" y="312"/>
         </scene>
     </scenes>
     <resources>

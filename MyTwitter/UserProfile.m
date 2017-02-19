@@ -74,29 +74,36 @@
             }
 
                 [self.tableView reloadData];
-
-
-
-
         }else if(isSuccess==FALSE && errorMessage!=nil){
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
         } else{
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
         }
 
-
     }];
-    
-    
-    
-    
-    
-
-    
 }
+
+
 
 -(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue{
     
+}
+
+-(IBAction)addNewPostButton:(UIButton *)sender {
+//    [self preapareForSuccessfullLoginSEaguewithResponseData:_dict];
+    //
+}
+-(void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
+    self.userProfileData = responseData;
+    [self performSegueWithIdentifier:@"UserProfile to UserPost" sender:self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"UserProfile to UserPost"]){
+        UserPost *up = segue.destinationViewController;
+        up.userProfileDict = self.dict;
+    }
 }
 
 @end

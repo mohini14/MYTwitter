@@ -24,14 +24,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)saveButtonPressed:(id)sender {
+    NSString *text=self.textView.text;
+    [self.textView resignFirstResponder];
+    NSMutableDictionary *dictionary=[NSMutableDictionary new];
+    dictionary[@"post"]=text;
+    dictionary[@"username"]=self.userProfileDict[@"username"];
+    [UserServices submitPost:dictionary andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+        
+        if(isSuccess==TRUE){
+            
+            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"Your post succesfully posted" andActionTitle:@"ok" forView:self];
+            
+            
+        }else if(isSuccess==FALSE && errorMessage!=nil){
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
+        } else{
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
+        }
+        
+        
+
+    
+        
+    }];
+    
+    
+    
+    
+    
 }
-*/
 
 @end
