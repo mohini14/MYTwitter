@@ -12,6 +12,8 @@
 #import "NSString+Utils.h"
 #import "UserProfile.h"
 
+@class ActivityIndicator;
+
 
 @interface LoginViewController : UIViewController
 
@@ -25,11 +27,7 @@
 @property (weak, nonatomic) NSDictionary *userProfileData;
 
 
-
-
-
-
-
+@property(nonatomic, strong) ActivityIndicator *activityIndicator;
 
 - (IBAction)loginButtonPressed:(UIButton *)sender;
 -(IBAction)unwindFromUserProfileVC:(UIStoryboardSegue *)unwindSegue;

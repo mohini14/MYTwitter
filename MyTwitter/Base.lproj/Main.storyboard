@@ -413,23 +413,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help Centre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-H4-8Xx">
-                                <rect key="frame" x="128" y="20" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEj-kT-N08">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEj-kT-N08">
+                                <rect key="frame" x="24" y="28" width="40" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gir-li-MG8"/>
+                                    <constraint firstAttribute="width" constant="40" id="k2r-Cc-buV"/>
+                                </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="o09-rD-DzT" kind="unwind" unwindAction="unwindFromHelpVC:" id="6FR-AU-9Uw"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vy-rK-qEl">
+                                <rect key="frame" x="0.0" y="178" width="375" height="489"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help Centre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-H4-8Xx">
+                                <rect key="frame" x="48" y="28" width="279" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36248574550000001" green="1" blue="0.98379505629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7vy-rK-qEl" secondAttribute="trailing" id="2wc-fF-OY0"/>
+                            <constraint firstItem="FEj-kT-N08" firstAttribute="top" secondItem="yCP-2Z-w7M" secondAttribute="bottom" constant="8" id="9QF-rS-ehL"/>
+                            <constraint firstItem="7vy-rK-qEl" firstAttribute="top" secondItem="FEj-kT-N08" secondAttribute="bottom" constant="100" id="9jv-le-pZ4"/>
+                            <constraint firstItem="7vy-rK-qEl" firstAttribute="leading" secondItem="CjI-Xd-oUA" secondAttribute="leading" id="A0a-pC-ByS"/>
+                            <constraint firstItem="FEj-kT-N08" firstAttribute="leading" secondItem="CjI-Xd-oUA" secondAttribute="leadingMargin" constant="8" id="imT-4J-MQq"/>
+                            <constraint firstItem="6eq-Zi-tTG" firstAttribute="top" secondItem="7vy-rK-qEl" secondAttribute="bottom" id="yl4-Tg-eL9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAM-su-mpL" userLabel="First Responder" sceneMemberID="firstResponder"/>

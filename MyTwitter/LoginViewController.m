@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ActivityIndicator.h"
 
 
 @interface LoginViewController ()
@@ -17,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.activityIndicator=[ActivityIndicator getInstanceForView:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +72,9 @@
     
     
     if(!([username isempty] || [password isempty])) {
+        [self.activityIndicator startActivityIndicator];
         [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess, NSDictionary *responseData, NSString *errorMessage) {
+            [self.activityIndicator stopActivityIndicator];
             if (isSuccess == TRUE) {
                 //NSString *message = @"Login Successful";
                
