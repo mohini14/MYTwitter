@@ -17,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+//    NSString *user = [def stringForKey:@"textField1Text"];
+//    
+//    NSString *pass = [def stringForKey:@"textField2Text"];
+//    
+//    _userNameField.text = user;
+//    _passwordField.text = pass;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,12 +64,20 @@
 
 
 
-
-
-
 #pragma mark-unwind segues to come back to login page
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
 - (IBAction)loginButtonPressed:(UIButton *)sender {
-  //  [ActivityBar activityBarOn :self];
+ 
    NSString *username=self.userNameField.text;
     NSString *password=self.passwordField.text;
     [[self userNameField] resignFirstResponder];
@@ -71,6 +85,7 @@
     
     
     if(!([username isempty] || [password isempty])) {
+       // [self keepMeLoggedInSwitch:_switchOutlet];//to see if keep me logged in option is on
         [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess, NSDictionary *responseData, NSString *errorMessage) {
             if (isSuccess == TRUE) {
                 //NSString *message = @"Login Successful";
@@ -94,6 +109,19 @@
     }
 }
 
+//- (void)keepMeLoggedInSwitch:(UISwitch *)aSwitch {
+//    UISwitch *sw = aSwitch;
+//    if ([sw isOn]) {
+//        NSString *saveName = self.userNameField.text;
+//        NSString *savePassword = self.passwordField.text;
+//
+//        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//        [userDefault setObject:saveName forKey:@"name"];
+//        [userDefault setObject:savePassword forKey:@"password"];
+//        [userDefault synchronize];
+//
+//    }
+//}
 #pragma for segues//
 
 -(void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
