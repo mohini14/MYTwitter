@@ -5,10 +5,10 @@
 
 #import <Foundation/Foundation.h>
 #import "HTTPServices.h"
-//#define HOST   @"http://ec2-52-38-49-62.us-west-2.compute.amazonaws.com:8000/mytwitter"
-#define HOST @"http://03a99d4b.ngrok.io/mytwitter"
+#define HOST   @"http://ec2-52-38-49-62.us-west-2.compute.amazonaws.com:8000/mytwitter"
+//#define HOST @"http://03a99d4b.ngrok.io/mytwitter"
 #define LOGIN_URL @"/user/login"
-#define REG_URL @"/user"
+#define REG_URL @"/user/"
 #define ALL_POSTS @"/post"
 #define NEW_POST_URL @"/user/<username>/post"
 #define GET_POST_URL @"/post/<post_id>"
