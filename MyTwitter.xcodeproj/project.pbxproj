@@ -19,6 +19,7 @@
 		1513DBF31E588B3C00FB57AC /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1513DBF21E588B3C00FB57AC /* logout.jpg */; };
 		1513DC541E589E7B00FB57AC /* UserPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513DC531E589E7B00FB57AC /* UserPost.m */; };
 		1513DC561E58B11400FB57AC /* star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1513DC551E58B11400FB57AC /* star.jpeg */; };
+		1513DC591E5993BA00FB57AC /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513DC581E5993BA00FB57AC /* CommentViewController.m */; };
 		151485771E5850E0005F4BA5 /* FB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151485761E5850E0005F4BA5 /* FB.jpg */; };
 		1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 151485791E58564C005F4BA5 /* UserProfile.m */; };
 		C04D420B148857EF2CA42AD0 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4556A14D33A953461CA7 /* UserServices.m */; };
@@ -48,6 +49,8 @@
 		1513DC521E589E7B00FB57AC /* UserPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPost.h; sourceTree = "<group>"; };
 		1513DC531E589E7B00FB57AC /* UserPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPost.m; sourceTree = "<group>"; };
 		1513DC551E58B11400FB57AC /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = star.jpeg; path = ../../../../Downloads/star.jpeg; sourceTree = "<group>"; };
+		1513DC571E5993BA00FB57AC /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		1513DC581E5993BA00FB57AC /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		151485761E5850E0005F4BA5 /* FB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FB.jpg; path = ../../../../Downloads/FB.jpg; sourceTree = "<group>"; };
 		151485781E58564C005F4BA5 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		151485791E58564C005F4BA5 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				151485791E58564C005F4BA5 /* UserProfile.m */,
 				1513DC521E589E7B00FB57AC /* UserPost.h */,
 				1513DC531E589E7B00FB57AC /* UserPost.m */,
+				1513DC571E5993BA00FB57AC /* CommentViewController.h */,
+				1513DC581E5993BA00FB57AC /* CommentViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				1509085A1E574D400023530B /* HelpViewController.m in Sources */,
 				150908561E5745370023530B /* SignUpViewController.m in Sources */,
 				1509082D1E57316E0023530B /* ViewController.m in Sources */,
+				1513DC591E5993BA00FB57AC /* CommentViewController.m in Sources */,
 				1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */,
 				1509082A1E57316E0023530B /* AppDelegate.m in Sources */,
 				1513DC541E589E7B00FB57AC /* UserPost.m in Sources */,

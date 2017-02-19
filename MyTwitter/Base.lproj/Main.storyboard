@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="596" y="670"/>
         </scene>
-        <!--View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="gGv-j1-pgs">
             <objects>
-                <viewController id="mhp-oh-Ox4" sceneMemberID="viewController">
+                <viewController id="mhp-oh-Ox4" customClass="CommentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qTv-Qy-2WR"/>
                         <viewControllerLayoutGuide type="bottom" id="jwZ-IC-gSq"/>
@@ -339,6 +339,11 @@
                     <navigationItem key="navigationItem" id="OQl-uV-I3V">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="2IK-DH-d9b"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="aRp-eH-TMm" id="2Pw-HU-NIp"/>
+                        <outlet property="postLabel" destination="XTn-dl-Lhf" id="eMz-Rf-sA0"/>
+                        <outlet property="tableView" destination="Q5t-E2-4hX" id="TPr-QQ-TV7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu3-EF-RWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,6 +513,7 @@
                         <outlet property="emailIdLabel" destination="eGa-vo-7Fo" id="zGs-nR-fMA"/>
                         <outlet property="nameLabel" destination="ms6-dJ-mEX" id="K3g-gA-MYg"/>
                         <outlet property="tableView" destination="k1m-gw-Thc" id="3dU-CZ-vu2"/>
+                        <segue destination="mhp-oh-Ox4" kind="presentation" identifier="UserPofileToComment" id="SdL-FX-mU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lew-Mu-7SG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,4 +632,7 @@
         <image name="logout.jpg" width="1279" height="1300"/>
         <image name="star.jpeg" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SdL-FX-mU1"/>
+    </inferredMetricsTieBreakers>
 </document>

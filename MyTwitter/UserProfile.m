@@ -13,16 +13,14 @@
 @end
 
 @implementation UserProfile{
-    
-    NSMutableArray *tableData ;
-
+    NSInteger clickedRowNumber;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _nameLabel.text= _dict[@"name"];
     _emailIdLabel.text= _dict[@"email"];
-    tableData = [@[] mutableCopy];
+    self.tableData = [@[] mutableCopy];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
@@ -36,16 +34,21 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return tableData.count;
+    return self.tableData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text= tableData[(NSUInteger) indexPath.row][@"post"];
+    cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"post"];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    clickedRowNumber = indexPath.row;
+    int x = 10;
+
+}
 
 
 /*
@@ -63,15 +66,16 @@
 -(void)populateData{
     [UserServices getAllPost:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
         if(isSuccess==TRUE){
-            tableData= [@[] mutableCopy];
+            self.tableData = [@[] mutableCopy];
             for (NSDictionary *obj in data[@"results"]){//for each loop to retrieve data from json;
                 
                 NSDictionary *tempDict=@{
                         @"post":obj[@"post"],
                         @"date":obj[@"created_at"],
-                        @"username":obj[@"user"][@"username"]
+                        @"username":obj[@"user"][@"username"],
+                        @"post_id":obj[@"id"]
                 };
-                [tableData addObject:tempDict];
+                [self.tableData addObject:tempDict];
             }
 
                 [self.tableView reloadData];
@@ -96,12 +100,29 @@
 
 
 
+//void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
+//    self.userProfileData = responseData;
+//    [self performSegueWithIdentifier:@"loggedInSeague" sender:self];
+//
+//}
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"UserProfileToUserPost"]){
-        UserPost *up = segue.destinationViewController.childViewControllers[0];
-        up.userProfileDict = self.dict;
-    }
-}
+
+
+//
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if([segue.identifier isEqualToString:@"UserProfileToUserPost"]){
+//        UserPost *up = segue.destinationViewController.childViewControllers[0];
+//        up.userProfileDict = self.dict;
+//    }
+//
+//    if([segue.identifier isEqualToString:@"UserPofileToComment"]){
+//        CommentViewController *destination = segue.destinationViewController;
+//        NSDictionary *tempDict = @{
+//                @"username":
+//        };
+//
+//        };
+//        destination.dict = tempDict;
+//}
 
 @end
