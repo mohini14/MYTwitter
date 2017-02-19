@@ -38,8 +38,24 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"post"];
+    PostTableCell *cell= [tableView dequeueReusableCellWithIdentifier:@"PostTableCell"];
+    
+    
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PostTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.usernameLabel.text=_tableData[indexPath.row][@"username"];
+    //cell.likesLabel.text=_tableData[indexPath.row][@"likes"];
+    cell.postedAtLabel.text=_tableData[indexPath.row][@"created_at"];
+    cell.postLabel.text=_tableData[indexPath.row][@"post"];
+   //ell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    cell.imageView.userInteractionEnabled = NO;
+
+
+    
     return cell;
 }
 
@@ -50,6 +66,10 @@
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  120;
+}
 
 /*
 #pragma mark - Navigation
@@ -73,7 +93,9 @@
                         @"post":obj[@"post"],
                         @"date":obj[@"created_at"],
                         @"username":obj[@"user"][@"username"],
-                        @"post_id":obj[@"id"]
+                        @"post_id":obj[@"id"],
+                        @"likes":obj[@"likes"],
+                        @"created_at":obj[@"created_at"]
                     
                 };
                 [self.tableData addObject:tempDict];

@@ -41,6 +41,8 @@
 
 - (IBAction)okCommentButtonPressed:(id)sender {
     
+    
+    
     NSString *addCommentText=self.addCommentTextField.text;
      NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
     [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {

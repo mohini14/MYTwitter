@@ -12,6 +12,7 @@
 #import "AlertManager.h"
 #import "UserPost.h"
 #import "CommentViewController.h"
+#import "PostTableCell.h"
 
 @interface UserProfile : UIViewController<UITableViewDelegate,UITableViewDataSource>{
     
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) NSDictionary *dict;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSDictionary *userProfileData;
+@property (strong,nonatomic) UIImageView* getImageNameForRow;
 
 @property(nonatomic, strong) NSMutableArray *tableData;
 -(void) onClickFromSelectedRowToComments;
