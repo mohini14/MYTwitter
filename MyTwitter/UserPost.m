@@ -27,18 +27,23 @@
 
 
 - (IBAction)saveButtonPressed:(id)sender {
-    NSString *text=self.textView.text;
+    NSString *post=self.textView.text;
+    NSString *username = self.userProfileDict[@"username"];
     [self.textView resignFirstResponder];
-    NSMutableDictionary *dictionary=[NSMutableDictionary new];
-    dictionary[@"post"]=text;
-    dictionary[@"username"]=self.userProfileDict[@"username"];
-    [UserServices submitPost:dictionary andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+    [UserServices submitPost:post withUsername:username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
         
         if(isSuccess==TRUE){
             
-            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"Your post succesfully posted" andActionTitle:@"ok" forView:self];
-            
-            
+            //[AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"Your post succesfully posted" andActionTitle:@"ok" forView:self];
+            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOU POSTED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^()
+
+                            {
+                                [self performSegueWithIdentifier:@"unwindFromUSerPost" sender:self];
+                            }
+
+            forView:self
+             ];
+        
         }else if(isSuccess==FALSE && errorMessage!=nil){
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
         } else{
@@ -50,7 +55,6 @@
     
         
     }];
-    
     
     
     

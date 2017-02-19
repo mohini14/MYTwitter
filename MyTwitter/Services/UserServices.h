@@ -23,8 +23,8 @@ typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * er
 +(void) register:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *error))callBackFromVC;
 +(void)passresponse:(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error andCompletionHandler :(CallBackToMainVC )callBackFromVC;
 +(void)getAllPost :(void (^)(BOOL isSuccess,NSDictionary*data,NSString *errorMessage))callBackFromUserProfile;
-+(void) submitPost:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;
-
+//+(void) submitPost:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;
++(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;;
 
 
 

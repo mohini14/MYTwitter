@@ -49,4 +49,17 @@
     return FALSE;
 }
 
+
++ (void)showAlertPopupWithTitle:(NSString *)title andMessage:(NSString *)message andActionTitle:(NSString *)actionTitle withBlock:(void (^)())callBackBlock forView:(UIViewController *)view{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        callBackBlock();
+
+    }];
+    [alertController addAction:ok];
+
+    [view presentViewController:alertController animated:YES completion:nil];
+}
+
 @end

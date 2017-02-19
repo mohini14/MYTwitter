@@ -63,6 +63,7 @@
 -(void)populateData{
     [UserServices getAllPost:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
         if(isSuccess==TRUE){
+            tableData= [@[] mutableCopy];
             for (NSDictionary *obj in data[@"results"]){//for each loop to retrieve data from json;
                 
                 NSDictionary *tempDict=@{
@@ -86,22 +87,19 @@
 
 
 -(IBAction)unwindFromUserPost:(UIStoryboardSegue *)segue{
+    if([segue.identifier isEqualToString:@"unwindFromUSerPost"]){
+        [self populateData];
     
+        
+    }
 }
 
--(IBAction)addNewPostButton:(UIButton *)sender {
-//    [self preapareForSuccessfullLoginSEaguewithResponseData:_dict];
-    //
-}
--(void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
-    self.userProfileData = responseData;
-    [self performSegueWithIdentifier:@"UserProfile to UserPost" sender:self];
-    
-}
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"UserProfile to UserPost"]){
-        UserPost *up = segue.destinationViewController;
+    if([segue.identifier isEqualToString:@"UserProfileToUserPost"]){
+        UserPost *up = segue.destinationViewController.childViewControllers[0];
         up.userProfileDict = self.dict;
     }
 }

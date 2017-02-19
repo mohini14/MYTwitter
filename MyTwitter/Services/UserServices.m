@@ -74,9 +74,11 @@
     
 }
 
-+(void) submitPost:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost{
-    
-    NSString*username=dict[@"username"];
++(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost
+{
+    NSDictionary *dict=@{
+            @"post":post
+    };
     
     NSString *urlString=[[NSString stringWithFormat:@"%@%@",HOST,NEW_POST_URL]stringByReplacingOccurrencesOfString:@"<username>" withString:username];//replacing username from url
     [HTTPServices POSTWithURL:urlString andWithDictionary:dict andWithCompletionHAndler:^(NSData *data,NSURLResponse *response,NSError *error){
