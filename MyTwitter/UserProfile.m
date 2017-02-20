@@ -144,10 +144,9 @@
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
         CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
 		NSMutableDictionary *tempDict=[[NSMutableDictionary alloc]init];
-       tempDict = [_tableData objectAtIndex:clickedRowNumber];
-		NSString *usernameToComments=self.dict[@"username"];
-//		[tempDict.mutableCopy setObject:usernameToComments forKey:@"usernameToComments"];
-		tempDict.mutableCopy[@"usernameToComments"]=usernameToComments;
+       tempDict = [[_tableData objectAtIndex:clickedRowNumber] mutableCopy];
+		NSString *usernameToComments= [_dict valueForKey:@"username"];
+		[tempDict setValue:usernameToComments forKey:@"usernameToComments"];
 		destination.dict = tempDict;
 }
 
