@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	self.activityIndicator=[ActivityIndicator getInstanceForView:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,8 +31,10 @@
     NSString *username = self.userProfileDict[@"username"];
     [self.textView resignFirstResponder];
     [UserServices submitPost:post withUsername:username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+		[self.activityIndicator startActivityIndicator];
         
         if(isSuccess==TRUE){
+			[self.activityIndicator stopActivityIndicator];
             
             //[AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"Your post succesfully posted" andActionTitle:@"ok" forView:self];
             [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOU POSTED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^()

@@ -19,6 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.activityIndicator=[ActivityIndicator getInstanceForView:self];
+	
+	
+	
+	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+	if([defaults objectForKey:@"username"]!=nil){
+	self.userNameField.text=[defaults objectForKey:@"username"];
+	self.passwordField.text=[defaults objectForKey:@"password"];
+		if(![self.rememberMeSwitch isOn])
+			[self.rememberMeSwitch setOn:YES animated:YES];
+	}
+	
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +81,8 @@
     NSString *password=self.passwordField.text;
     [[self userNameField] resignFirstResponder];
     [[self passwordField] resignFirstResponder];
+	[self setKeepMeLoggedInSwitch:self.rememberMeSwitch];
+	
     
     
     if(!([username isempty] || [password isempty])) {
@@ -117,6 +131,34 @@
     }
 }
 
+
+
+
+
+
+-(void) setKeepMeLoggedInSwitch:(UISwitch *)keepMeLoggedInSwitch{
+	UISwitch *sw=keepMeLoggedInSwitch;
+	if([sw isOn]){
+		NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+		[defaults setObject:self.userNameField.text forKey:@"username"];
+		[defaults setObject:self.passwordField.text forKey:@"password"];
+		[defaults synchronize];
+		
+	}
+	else{
+		NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+		if(([defaults objectForKey:@"username"] !=nil)|| ([defaults objectForKey:@"password"]!=nil)){
+			[defaults setObject:nil forKey:@"username"];
+			[defaults setObject:nil forKey:@"password"];
+		}
+			
+	}
+	
+}
+- (IBAction) switchAction:(UISwitch*)sender
+{
+	
+}
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue{
     //to come back from signup view controller
 }

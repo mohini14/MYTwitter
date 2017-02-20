@@ -22,6 +22,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
+   self.activityIndicator= [ActivityIndicator getInstanceForView:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,8 +46,10 @@
     
     NSString *addCommentText=self.addCommentTextField.text;
      NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
+    [self.activityIndicator startActivityIndicator];
     [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
-
+	   
+	   [self.activityIndicator stopActivityIndicator];
         if (isSuccess == TRUE) {
             
             [self populateData];

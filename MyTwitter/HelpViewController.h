@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HelpViewController : UIViewController<UIWebViewDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *helpWebView;
+
 
 @end

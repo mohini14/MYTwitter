@@ -48,7 +48,7 @@
     }
     
     cell.usernameLabel.text=_tableData[indexPath.row][@"username"];
-    //cell.likesLabel.text=_tableData[indexPath.row][@"likes"];
+   //cell.likesLabel.text=[_tableData[indexPath.row] valueForKey:@"likes"];
     cell.postedAtLabel.text=_tableData[indexPath.row][@"created_at"];
     cell.postLabel.text=_tableData[indexPath.row][@"post"];
    //ell.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -94,7 +94,7 @@
                         @"date":obj[@"created_at"],
                         @"username":obj[@"user"][@"username"],
                         @"post_id":obj[@"id"],
-                        @"likes":obj[@"likes"],
+						@"likes":obj[@"likes"],
                         @"created_at":obj[@"created_at"]
                     
                 };

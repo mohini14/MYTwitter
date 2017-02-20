@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4112" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="155" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXg-aS-TJZ">
                                 <rect key="frame" x="40" y="217" width="295" height="30"/>
@@ -50,6 +50,9 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-Ww-rJg">
                                 <rect key="frame" x="102" y="282" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="RFw-Js-gNW"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep me Logged In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-f1-z1Q">
                                 <rect key="frame" x="183" y="287" width="148" height="21"/>
@@ -113,8 +116,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="keepMeLoggedInSwitch" destination="HDd-Ww-rJg" id="VSc-dc-ct4"/>
                         <outlet property="passwordField" destination="314-p8-hfW" id="LPH-zg-igt"/>
+                        <outlet property="rememberMeSwitch" destination="HDd-Ww-rJg" id="sdR-UC-e04"/>
                         <outlet property="userNameField" destination="Gex-Es-Aj9" id="Uhg-nf-eKG"/>
                         <segue destination="7Zk-ZD-dHI" kind="presentation" identifier="loggedInSeague" id="POI-Su-eCz"/>
                     </connections>
@@ -313,7 +316,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bE9-wc-lLM" id="Kt8-Mu-j5r">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -413,6 +416,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help Centre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-H4-8Xx">
+                                <rect key="frame" x="48" y="28" width="279" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEj-kT-N08">
                                 <rect key="frame" x="24" y="28" width="40" height="50"/>
                                 <constraints>
@@ -428,13 +438,6 @@
                                 <rect key="frame" x="0.0" y="178" width="375" height="489"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help Centre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-H4-8Xx">
-                                <rect key="frame" x="48" y="28" width="279" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36248574550000001" green="1" blue="0.98379505629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -467,7 +470,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSr-w8-Hnv" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FB.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-Qy-4oY">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FB.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-Qy-4oY">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="b4Q-IP-GWN"/>
@@ -505,7 +508,7 @@
                                             <constraint firstAttribute="width" constant="60" id="Byr-Th-7ka"/>
                                             <constraint firstAttribute="height" constant="40" id="aPk-ns-EcA"/>
                                         </constraints>
-                                        <state key="normal" title="logout button" image="logout.jpg"/>
+                                        <state key="normal" title="logout button" image="logout.jpeg"/>
                                         <connections>
                                             <segue destination="Mc8-mY-pX9" kind="unwind" unwindAction="unwindFromUserProfileVC:" id="Au5-ZB-tfy"/>
                                         </connections>
@@ -540,7 +543,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0en-8o-95p" id="Ve2-8W-Be1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -618,15 +621,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="8Aa-q5-bxD">
-                                <rect key="frame" x="67" y="298" width="82" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-rk-wLS">
-                                <rect key="frame" x="157" y="307" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="featured"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.36087095740000003" green="1" blue="0.98407405609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -695,8 +689,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FB.jpg" width="1200" height="770"/>
-        <image name="logout.jpg" width="1279" height="1300"/>
-        <image name="star.jpeg" width="225" height="225"/>
+        <image name="FB.jpeg" width="225" height="225"/>
+        <image name="logout.jpeg" width="225" height="225"/>
     </resources>
 </document>

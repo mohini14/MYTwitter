@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AlertManager.h"
 #import "UserServices.h"
+#import "ActivityIndicator.h"
+
 
 @interface SignUpViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *fnameField;
@@ -26,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *confirmPasswordField;
 
 - (IBAction)signupButtonPressed:(UIButton *)sender;
+@property (strong,nonatomic) ActivityIndicator *activityIndicator;
 
 
 

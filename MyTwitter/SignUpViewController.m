@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.activityIndicator=[ActivityIndicator getInstanceForView:self];
+
     // Do any additional setup after loading the view.
 }
 
@@ -54,8 +56,9 @@
 
     if(!(([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty]) || [username isempty])){
        if([password isEqualToString:confirmpassword]){
+		   [self.activityIndicator startActivityIndicator];
         [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
-
+			[self.activityIndicator stopActivityIndicator];
             if(isSuccess==TRUE){
                 NSString *message=@"Registered Successfully";
                 [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];

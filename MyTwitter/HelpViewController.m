@@ -18,12 +18,12 @@
     [super viewDidLoad];
     
     
-    NSString *urlAddress = @"https://en.wikipedia.org/wiki/Twitter";
-    NSURL *url = [NSURL URLWithString:urlAddress];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_helpWebView loadRequest:requestObj];
-    _helpWebView.delegate=self;
-    [self.view addSubview:_helpWebView];
+//    NSString *urlAddress = @"https://en.wikipedia.org/wiki/Twitter";
+//    NSURL *url = [NSURL URLWithString:urlAddress];
+//    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+//    [_helpWebView loadRequest:requestObj];
+//    _helpWebView.delegate=self;
+//    [self.view addSubview:_helpWebView];
 
 }
 

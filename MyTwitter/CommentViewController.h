@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserServices.h"
 #import "AlertManager.h"
+#import "ActivityIndicator.h"
 
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *addCommentTextField;
 @property (strong, nonatomic) NSDictionary *dict;
 
-
+@property(strong,nonatomic) ActivityIndicator *activityIndicator;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)okCommentButtonPressed:(id)sender;

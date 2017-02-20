@@ -22,7 +22,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
-@property (strong, nonatomic) IBOutlet UISwitch *keepMeLoggedInSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;
 
 @property (weak, nonatomic) NSDictionary *userProfileData;
 
@@ -33,8 +33,9 @@
 -(IBAction)unwindFromUserProfileVC:(UIStoryboardSegue *)unwindSegue;
 -(IBAction)unwindFromHelpVC:(UIStoryboardSegue *)unwindSegue;
 
-
+- (IBAction) switchAction:(UISwitch*)sender;
 - (void)preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData;
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue;
+-(void) setKeepMeLoggedInSwitch:(UISwitch *)keepMeLoggedInSwitch;
 @end
