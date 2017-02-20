@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _nameLabel.text= _dict[@"name"];
+    _nameLabel.text= _dict[@"username"];
     _emailIdLabel.text= _dict[@"email"];
     self.tableData = [@[] mutableCopy];
     self.tableView.delegate = self;
@@ -52,7 +52,7 @@
     cell.postedAtLabel.text=_tableData[indexPath.row][@"created_at"];
     cell.postLabel.text=_tableData[indexPath.row][@"post"];
    //ell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    cell.imageView.userInteractionEnabled = NO;
+    //cell.imageView.userInteractionEnabled = NO;
 
 
     
@@ -144,8 +144,10 @@
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
         CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
         
-        NSDictionary *tempDict = [_tableData objectAtIndex:clickedRowNumber];
-        destination.dict = tempDict;
+       NSDictionary *tempDict = [_tableData objectAtIndex:clickedRowNumber];
+		//NSString *usernameToPost=self.dict[@"username"];
+		//[tempDict setValue:usernameToPost forKey:@"usernameToPost"];
+		destination.dict = tempDict;
 }
 
 }

@@ -35,10 +35,34 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"comment"];
+    CommentTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell"];
+    if(cell==nil)
+	   {
+		  NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell" owner:self options:nil];
+		  cell = [nib objectAtIndex:0];
+
+	   }
+    
+	   cell.commentLabel.text=_tableData[indexPath.row][@"comments"];
+	  // cell.usernameLabel.text=_dict[@"usernameToPost"];
+	   cell.postedatLabel.text=_tableData[indexPath.row][@"created_at"];
+	   
+    
+    
+    //cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"comment"];
     return cell;
+    
+    
+    
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  120;
+}
+
+
 
 - (IBAction)okCommentButtonPressed:(id)sender {
     
@@ -80,13 +104,14 @@
 
                 NSDictionary *tempDict=@{
 
-                        @"comment":obj[@"comment"],
+                        @"comments":obj[@"comment"],
                         @"username":obj[@"user"][@"username"],
-                        @"likes":obj[@"likes"]
+                        @"likes":obj[@"likes"],
+				    @"created_at":obj[@"created_at"]
                 };
                 [self.tableData addObject:tempDict];
             }
-
+		  NSLog(@"username value%@",_tableData[0][@"username"]);
             [self.tableView reloadData];
             self.postLabel.text=data[@"result"][@"post"];//updating postlabel field again after populating data
         }else if(isSuccess==FALSE && errorMessage!=nil){

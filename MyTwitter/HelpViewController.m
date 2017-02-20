@@ -16,11 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.activityIndicator=[ActivityIndicator getInstanceForView:self];
 	NSString *urlString=TWITTER_WIKI_URL;
+	[self.activityIndicator startActivityIndicator];
+	self.webViewContent.opaque = NO;
+	self.webViewContent.backgroundColor = [UIColor clearColor];
 	NSURL *url=[NSURL URLWithString:urlString];
 	NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-	[self.webViewContent loadRequest:urlRequest];
 	
+	[self.webViewContent loadRequest:urlRequest];
+	[self.activityIndicator stopActivityIndicator];
 	
 
 }

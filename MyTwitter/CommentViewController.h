@@ -10,6 +10,7 @@
 #import "UserServices.h"
 #import "AlertManager.h"
 #import "ActivityIndicator.h"
+#import "CommentTableViewCell.h"
 
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 

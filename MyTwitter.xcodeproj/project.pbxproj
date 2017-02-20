@@ -25,6 +25,8 @@
 		158DF5FE1E5AD1D300307D07 /* FB.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 158DF5FB1E5AD1D300307D07 /* FB.jpeg */; };
 		158DF5FF1E5AD1D300307D07 /* logout.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 158DF5FC1E5AD1D300307D07 /* logout.jpeg */; };
 		158DF6001E5AD1D300307D07 /* star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 158DF5FD1E5AD1D300307D07 /* star.jpeg */; };
+		158DF6081E5AFFC600307D07 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */; };
+		158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */; };
 		C04D420B148857EF2CA42AD0 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4556A14D33A953461CA7 /* UserServices.m */; };
 		C04D488C940077F0029B2CFE /* HTTPServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D42D5F7CFF47C28FCC0C1 /* HTTPServices.m */; };
 		C04D48CD1B82D27AC38E7E75 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4D2A1818887F5E61903C /* NSString+Utils.m */; };
@@ -62,6 +64,9 @@
 		158DF5FB1E5AD1D300307D07 /* FB.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FB.jpeg; path = ../../../../../Downloads/FB.jpeg; sourceTree = "<group>"; };
 		158DF5FC1E5AD1D300307D07 /* logout.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logout.jpeg; path = ../../../../../Downloads/logout.jpeg; sourceTree = "<group>"; };
 		158DF5FD1E5AD1D300307D07 /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = star.jpeg; path = ../../../../../Downloads/star.jpeg; sourceTree = "<group>"; };
+		158DF6051E5AFFC600307D07 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		C04D42D5F7CFF47C28FCC0C1 /* HTTPServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServices.m; sourceTree = "<group>"; };
 		C04D44A7E741AA640F983CB1 /* UserServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserServices.h; sourceTree = "<group>"; };
 		C04D44D705035358B3D08765 /* HTTPServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServices.h; sourceTree = "<group>"; };
@@ -161,6 +166,9 @@
 				1513DC5F1E59D97800FB57AC /* PostTableCell.h */,
 				1513DC601E59D97800FB57AC /* PostTableCell.m */,
 				1513DC611E59D97800FB57AC /* PostTableCell.xib */,
+				158DF6051E5AFFC600307D07 /* CommentTableViewCell.h */,
+				158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */,
+				158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */,
 			);
 			name = "Customise view";
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				150908321E57316E0023530B /* Assets.xcassets in Resources */,
 				150908301E57316E0023530B /* Main.storyboard in Resources */,
 				158DF6001E5AD1D300307D07 /* star.jpeg in Resources */,
+				158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +282,7 @@
 				1513DC621E59D97800FB57AC /* PostTableCell.m in Sources */,
 				1513DC591E5993BA00FB57AC /* CommentViewController.m in Sources */,
 				1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */,
+				158DF6081E5AFFC600307D07 /* CommentTableViewCell.m in Sources */,
 				1509082A1E57316E0023530B /* AppDelegate.m in Sources */,
 				1513DC661E5A352300FB57AC /* ActivityIndicator.m in Sources */,
 				1513DC541E589E7B00FB57AC /* UserPost.m in Sources */,
