@@ -102,7 +102,6 @@
 		150908241E57316E0023530B /* MyTwitter */ = {
 			isa = PBXGroup;
 			children = (
-				158DF6041E5AF3C800307D07 /* Modal */,
 				150908571E5745650023530B /* ViewControllers */,
 				150908281E57316E0023530B /* AppDelegate.h */,
 				150908291E57316E0023530B /* AppDelegate.m */,
@@ -164,13 +163,6 @@
 				1513DC611E59D97800FB57AC /* PostTableCell.xib */,
 			);
 			name = "Customise view";
-			sourceTree = "<group>";
-		};
-		158DF6041E5AF3C800307D07 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Modal;
 			sourceTree = "<group>";
 		};
 		C04D459116223DB9F34448D2 /* Services */ = {

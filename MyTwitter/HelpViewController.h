@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#define TWITTER_WIKI_URL @"https://en.wikipedia.org/wiki/Twitter"
 
 @interface HelpViewController : UIViewController<UIWebViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIWebView *webViewContent;
 
 @end
