@@ -44,7 +44,7 @@
 	   }
     
 	   cell.commentLabel.text=_tableData[indexPath.row][@"comments"];
-	  // cell.usernameLabel.text=_dict[@"usernameToPost"];
+	   cell.usernameLabel.text=[_dict valueForKey:@"usernameToComments"];
 	   cell.postedatLabel.text=_tableData[indexPath.row][@"created_at"];
 	   
     

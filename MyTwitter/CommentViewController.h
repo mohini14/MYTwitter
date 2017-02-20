@@ -18,7 +18,7 @@
 @property (strong, nonatomic) NSMutableArray *tableData;
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
 @property (strong, nonatomic) IBOutlet UITextField *addCommentTextField;
-@property (strong, nonatomic) NSDictionary *dict;
+@property (strong,nonatomic) NSMutableDictionary *dict;
 
 @property(strong,nonatomic) ActivityIndicator *activityIndicator;
 
