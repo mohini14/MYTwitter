@@ -16,12 +16,16 @@
 @property(nonatomic, strong) UIView *overlayView;
 
 @property(nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic,strong) UILabel *lblTitle;
 
 + (instancetype)getInstance;
 
 + (instancetype)getInstanceForView:(UIViewController *)viewController;
 
 - (void)startActivityIndicator;
+-(void)removeLoadedMessage;
 
 - (void)stopActivityIndicator;
+-(void) showLoadingViewMessage:(NSString *)msg;
+
 @end

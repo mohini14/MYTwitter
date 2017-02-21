@@ -56,8 +56,12 @@
 
     if(!(([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty]) || [username isempty])){
        if([password isEqualToString:confirmpassword]){
+		   
+		     [self.activityIndicator showLoadingViewMessage:@"signing up"];
 		   [self.activityIndicator startActivityIndicator];
+		 
         [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
+			[self.activityIndicator removeLoadedMessage];
 			[self.activityIndicator stopActivityIndicator];
             if(isSuccess==TRUE){
                 NSString *message=@"Registered Successfully";

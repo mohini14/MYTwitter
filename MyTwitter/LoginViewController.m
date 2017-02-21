@@ -86,8 +86,10 @@
     
     
     if(!([username isempty] || [password isempty])) {
+			[self.activityIndicator showLoadingViewMessage:@"loading"];
         [self.activityIndicator startActivityIndicator];
         [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess, NSDictionary *responseData, NSString *errorMessage) {
+			[self.activityIndicator removeLoadedMessage];
             [self.activityIndicator stopActivityIndicator];
             if (isSuccess == TRUE) {
                 //NSString *message = @"Login Successful";
