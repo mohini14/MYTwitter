@@ -42,11 +42,11 @@
 		  cell = [nib objectAtIndex:0];
 
 	   }
-    
+	   if(_tableData.count!=0){//if i tried to access empty array then its giving errori.e if a post does not have comment.
 	   cell.commentLabel.text=_tableData[indexPath.row][@"comments"];
 	   cell.usernameLabel.text=[_dict valueForKey:@"usernameToComments"];
 	   cell.postedatLabel.text=_tableData[indexPath.row][@"created_at"];
-	   
+	   }
     
     
     //cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"comment"];
@@ -111,7 +111,7 @@
                 };
                 [self.tableData addObject:tempDict];
             }
-		  NSLog(@"username value%@",_tableData[0][@"username"]);
+		 // NSLog(@"username value%@",_tableData[0][@"username"]);
             [self.tableView reloadData];
             self.postLabel.text=data[@"result"][@"post"];//updating postlabel field again after populating data
         }else if(isSuccess==FALSE && errorMessage!=nil){

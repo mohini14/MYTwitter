@@ -127,7 +127,7 @@
 
 
 -(void) onClickFromSelectedRowToComments{
-
+	
     [self performSegueWithIdentifier:@"UserPofileToComment" sender:self];
 
 }

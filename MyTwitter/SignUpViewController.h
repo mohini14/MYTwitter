@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AlertManager.h"
-#import "UserServices.h"
+
 #import "ActivityIndicator.h"
+#import "UserServices.h"
 
 
 @interface SignUpViewController : UIViewController
