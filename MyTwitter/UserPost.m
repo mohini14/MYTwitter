@@ -27,16 +27,21 @@
 
 
 - (IBAction)saveButtonPressed:(id)sender {
+
     NSString *post=self.textView.text;
     NSString *username = self.userProfileDict[@"username"];
     [self.textView resignFirstResponder];
+	if(self.textView.text!=0){
     [UserServices submitPost:post withUsername:username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+		[self.activityIndicator showLoadingViewMessage:@"Posting"];
 		[self.activityIndicator startActivityIndicator];
         
         if(isSuccess==TRUE){
+			[self.activityIndicator removeLoadedMessage];
 			[self.activityIndicator stopActivityIndicator];
+		
             
-            //[AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"Your post succesfully posted" andActionTitle:@"ok" forView:self];
+			
             [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOU POSTED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^()
 
                             {
@@ -45,7 +50,8 @@
 
             forView:self
              ];
-        
+			
+			
         }else if(isSuccess==FALSE && errorMessage!=nil){
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
         } else{
@@ -59,8 +65,11 @@
     }];
     
     
-    
-    
+	}
+	else{
+		[AlertManager showAlertPopupWithTitle:@"oooops" andMessage:@"YOU CANNOT SAVE WITHOUT POSTING" andActionTitle:@"ok" forView:self];
+	}
+	
 }
 
 @end
