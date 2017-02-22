@@ -7,6 +7,7 @@
 //
 
 #import "CommentViewController.h"
+#import "Post.h"
 
 @interface CommentViewController ()
 
@@ -17,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.postLabel.text=_dict[@"post"];
-    self.nameLabel.text=_dict[@"username"];//fetching for displaying purpose
+    self.postLabel.text= _displayPost.post;
+    self.nameLabel.text= _displayPost.user.username;//fetching for displaying purpose
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
@@ -44,7 +45,7 @@
 	   }
 	   if(_tableData.count!=0){//if i tried to access empty array then its giving errori.e if a post does not have comment.
 	   cell.commentLabel.text=_tableData[indexPath.row][@"comments"];
-	   cell.usernameLabel.text=[_dict valueForKey:@"usernameToComments"];
+	   cell.usernameLabel.text=_tableData[indexPath.row][@"username"];
 	   cell.postedatLabel.text=_tableData[indexPath.row][@"created_at"];
 	   }
     
@@ -69,9 +70,9 @@
     
     
     NSString *addCommentText=self.addCommentTextField.text;
-     NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
+     NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
     [self.activityIndicator startActivityIndicator];
-    [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+    [UserServices addComment:addCommentText withPostID:postID withUserName:_displayPost.user.username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
 	   
 	   [self.activityIndicator stopActivityIndicator];
         if (isSuccess == TRUE) {
@@ -95,7 +96,7 @@
 
 -(void)populateData{
 
-        NSString *postID=[NSString stringWithFormat:@"%@",_dict[@"post_id"]];
+        NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
 
     [UserServices getPostForPostID :postID andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
         if(isSuccess==TRUE){

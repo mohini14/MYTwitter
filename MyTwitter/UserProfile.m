@@ -48,6 +48,7 @@
         cell = [nib objectAtIndex:0];
     }
 
+    // to convert id interface from index of array to particular object that array holds
     Post *post = _postsTableData[indexPath.row];
 
     cell.usernameLabel.text=post.user.username;
@@ -143,11 +144,9 @@
 
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
         CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
-		NSMutableDictionary *tempDict=[[NSMutableDictionary alloc]init];
-       tempDict = [[_postsTableData objectAtIndex:clickedRowNumber] mutableCopy];
 		NSString *usernameToComments= [_dict valueForKey:@"username"];
-		[tempDict setValue:usernameToComments forKey:@"usernameToComments"];
-		destination.dict = tempDict;
+        Post *post = _postsTableData[clickedRowNumber];
+		destination.displayPost = post;
 }
 
 }
