@@ -11,6 +11,7 @@
 #import "AlertManager.h"
 #import "NSString+Utils.h"
 #import "UserProfile.h"
+#import "User.h"
 
 @class ActivityIndicator;
 

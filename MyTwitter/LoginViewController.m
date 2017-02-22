@@ -119,13 +119,12 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"loggedInSeague"]){
+		User *user=[User initWithDictionary:self.userProfileData];
         UserProfile *up = segue.destinationViewController;
-        NSDictionary *tempDict = @{
-                @"username":self.userProfileData[@"result"][@"username"],
-                @"name": [NSString stringWithFormat:@"%@ %@", self.userProfileData[@"result"][@"first_name"], self.userProfileData[@"result"][@"last_name"] ],
-                @"email": self.userProfileData[@"result"][@"email"]
-        };
-        up.dict = tempDict;
+		NSMutableArray *arr=[@[] mutableCopy];
+		[arr addObject:user];
+		up.userarr=[arr copy];
+		up.dict = self.userProfileData;
     }
 }
 

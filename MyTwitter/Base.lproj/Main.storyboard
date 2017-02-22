@@ -623,15 +623,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-Jy-7ET">
+                                <rect key="frame" x="156" y="322" width="63" height="25"/>
+                                <color key="backgroundColor" red="0.66907650139999997" green="1" blue="0.30924168530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Delete"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.36087095740000003" green="1" blue="0.98407405609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cXs-Jy-7ET" firstAttribute="top" secondItem="qfk-Zz-oKL" secondAttribute="bottom" constant="60" id="27G-0J-eyu"/>
                             <constraint firstItem="qfk-Zz-oKL" firstAttribute="leading" secondItem="8f7-7O-Vii" secondAttribute="leading" constant="16" id="49m-8U-hJ5"/>
                             <constraint firstItem="g3J-MF-3kZ" firstAttribute="leading" secondItem="8f7-7O-Vii" secondAttribute="leading" constant="16" id="9ec-zP-IXd"/>
                             <constraint firstItem="qfk-Zz-oKL" firstAttribute="top" secondItem="g3J-MF-3kZ" secondAttribute="bottom" constant="8" id="AeF-TJ-lHT"/>
+                            <constraint firstItem="cXs-Jy-7ET" firstAttribute="leading" secondItem="8f7-7O-Vii" secondAttribute="leadingMargin" constant="140" id="DJZ-11-bW3"/>
                             <constraint firstAttribute="trailing" secondItem="g3J-MF-3kZ" secondAttribute="trailing" constant="16" id="JTZ-uD-N6e"/>
                             <constraint firstAttribute="trailing" secondItem="qfk-Zz-oKL" secondAttribute="trailing" constant="16" id="OQi-ye-3Dt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cXs-Jy-7ET" secondAttribute="trailing" constant="140" id="PBK-30-hTC"/>
                             <constraint firstItem="g3J-MF-3kZ" firstAttribute="top" secondItem="8i4-kB-y6E" secondAttribute="bottom" id="myb-2a-rlx"/>
+                            <constraint firstItem="iee-K9-PcX" firstAttribute="top" secondItem="cXs-Jy-7ET" secondAttribute="bottom" constant="320" id="v3C-N7-T5T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WHc-y8-0D5">
