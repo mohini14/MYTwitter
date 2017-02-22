@@ -25,4 +25,12 @@
     }
     return false;
 }
+
+- (NSString *)append:(NSString *)appendString {
+    NSString *appendedString=[NSString stringWithFormat:@"%@%@",self,appendString];
+    return appendedString;
+}
+
+
+
 @end

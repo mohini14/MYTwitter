@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "UserServices.h"
 #import "AlertManager.h"
+#import "NSString+Utils.h"
+#import "UserProfile.h"
+#import "User.h"
+#import "SessionData.h"
+@class ActivityIndicator;
+
 
 @interface LoginViewController : UIViewController
 
@@ -17,25 +23,19 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
-@property (strong, nonatomic) IBOutlet UISwitch *keepMeLoggedInSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;
+
+@property (weak, nonatomic) NSDictionary *userProfileData;
 
 
-
-
-
-
-
+@property(nonatomic, strong) ActivityIndicator *activityIndicator;
 
 - (IBAction)loginButtonPressed:(UIButton *)sender;
+-(IBAction)unwindFromUserProfileVC:(UIStoryboardSegue *)unwindSegue;
+-(IBAction)unwindFromHelpVC:(UIStoryboardSegue *)unwindSegue;
 
-
-
-
-
-
-
-
-
+- (IBAction) switchAction:(UISwitch*)sender;
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue;
+-(void) setKeepMeLoggedInSwitch:(UISwitch *)keepMeLoggedInSwitch;
 @end

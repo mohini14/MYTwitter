@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityIndicator.h"
+#define TWITTER_WIKI_URL @"https://en.wikipedia.org/wiki/Twitter"
 
 @interface HelpViewController : UIViewController<UIWebViewDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *helpWebView;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webViewContent;
+@property (strong,nonatomic) ActivityIndicator *activityIndicator;
 
 @end

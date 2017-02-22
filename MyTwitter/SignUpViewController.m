@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.activityIndicator=[ActivityIndicator getInstanceForView:self];
+
     // Do any additional setup after loading the view.
 }
 
@@ -40,9 +42,10 @@
     NSString *lname=self.lnameField.text;
     NSString *username = self.usernameField.text;
     NSString *email=self.emailidField.text;
+    if([AlertManager validateEmail:email]){
+    
     NSString *password=self.passwordField.text;
     NSString *confirmpassword=self.confirmPasswordField.text;
-   //creating dict
     NSMutableDictionary *dict=[NSMutableDictionary new];
     dict[@"first_name"]=fname;
     dict[@"last_name"]=lname;
@@ -52,35 +55,29 @@
 
     if(!(([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty]) || [username isempty])){
        if([password isEqualToString:confirmpassword]){
-        [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
 
-            if(isSuccess==TRUE){
+           [self.activityIndicator startActivityIndicatorWithMessage:@"signing up"];
+            [UserServices register:dict andCallBackMethod:^(User *user,NSString *errorMessage){
+			[self.activityIndicator stopActivityIndicator];
+            if(user!=nil){
                 NSString *message=@"Registered Successfully";
                 [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
             } else{
-                if(errorMessage != nil){
                     [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
-                }else{
-                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:[responseData objectForKey:@"error"] andActionTitle:@"ok" forView:self];
+                }
 
-                }}
-
-
-
-        }];
-
-
-
-
+            }];
        } else{
            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"password and confirm password fields did not match" andActionTitle:@"0k" forView:self];
        }
 
-    }else{
+      }else{
         [AlertManager showAlertPopupWithTitle:@"Oooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
     }
     
-    
+    }else{
+        [AlertManager showAlertPopupWithTitle:@"Ooops" andMessage:@"Enter a valid email" andActionTitle:@"ok" forView:self];
+    }
     
     
     
