@@ -8,6 +8,8 @@
 
 #import "CommentViewController.h"
 #import "Post.h"
+#import "SessionData.h"
+#import "NSString+Utils.h"
 
 @interface CommentViewController ()
 
@@ -19,12 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.postLabel.text= _displayPost.post;
-    self.nameLabel.text= _displayPost.user.username;//fetching for displaying purpose
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self populateData];
+    
    self.activityIndicator= [ActivityIndicator getInstanceForView:self];
+    [self setUp];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +31,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)setUp{
+    self.sessionData=[SessionData getInstance];
+    self.postLabel.text=self.sessionData.currentPost.post ;
+    self.nameLabel.text= self.sessionData.currentPost.user.username;//fetching for displaying purpose
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self populateData];
+    
+}
+
+
+#pragma delegates
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.commentTableData.count;
 }
@@ -73,27 +85,18 @@
     
     NSString *addCommentText=self.addCommentTextField.text;
     [_addCommentTextField resignFirstResponder];
-    NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
-    [self.activityIndicator showLoadingViewMessage:@"wait...."];
-    [self.activityIndicator startActivityIndicator];
-    if(addCommentText.length!=0){
-    [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
-	   [self.activityIndicator removeLoadedMessage];
+    NSString *postID= [NSString stringWithFormat:@"%@",self.sessionData.currentPost.postId];
+    if(![addCommentText isempty]){
+        [self.activityIndicator startActivityIndicatorWithMessage:@"adding your comment"];
+        [UserServices addComment:addCommentText withPostID:postID withUserName:self.sessionData.loggedInUser.username andCallBackMethod:^(BOOL isSuccess, NSString *errorMessage) {
 	   [self.activityIndicator stopActivityIndicator];
         if (isSuccess == TRUE) {
-            
-		  
-		  [AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
+            [AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
             self.addCommentTextField.text=nil;
-		  [self populateData];
-        
-        
-        } else if (isSuccess == FALSE && errorMessage != nil) {
+		    [self populateData];
+        } else {
             [AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMessage andActionTitle:@"OK" forView:self];
-	   }
-
-    }];
-    
+	   }}];
     }else{
 	   [AlertManager showAlertPopupWithTitle:@"OOOOPS" andMessage:@"YOU CANNOT POST AN EMPTY COMMENT" andActionTitle:@"ok" forView:self];
     }
@@ -101,18 +104,17 @@
 
 -(void)populateData{
 
-        NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
-	   [self.activityIndicator startActivityIndicator];
-	   [self.activityIndicator showLoadingViewMessage:@"loading..."];
-	   [UserServices getPostForPostID :postID andCallBackMethod:^(BOOL isSuccess, NSArray *data, NSString *errorMessage) {
-		  [self.activityIndicator removeLoadedMessage];
-		  [self.activityIndicator stopActivityIndicator];
-        if(isSuccess==TRUE){
-		  
-		  self.commentTableData=data;
+        NSString *postID=[NSString stringWithFormat:@"%@",self.sessionData.currentPost.postId];
+	   [self.activityIndicator startActivityIndicatorWithMessage:@"loading comments"];
+	   [UserServices getPostForPostID :postID andCallBackMethod:^(Post *post, NSString *errorMessage) {
+       [self.activityIndicator stopActivityIndicator];
+        if(post!=nil){
+            self.commentTableData=post.comments;
             [self.tableView reloadData];
-		  self.postLabel.text=self.displayPost.post;//updating postlabel field again after populating data
-        }else if(isSuccess==FALSE && errorMessage!=nil){
+		    self.postLabel.text=post.post;//updating postlabel field again after populating data
+            self.sessionData.currentPost=post;
+
+        }else{
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
 	   }
 

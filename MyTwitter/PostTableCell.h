@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *likesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageHolder;
+- (IBAction)editButtonPressed:(UIButton *)sender;
 
 @end

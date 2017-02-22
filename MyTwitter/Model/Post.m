@@ -6,30 +6,33 @@
 #import "Post.h"
 #import "User.h"
 #import "DateUtils.h"
+#import "Comment.h"
 
 
 @implementation Post {
 
 }
-+ (Post *)initWithDictionary:(NSDictionary *)dictionary {
-    if(dictionary!=nil) {
-        Post *post = [Post new];
-        post.post = dictionary[@"post"];
-        post.createdAt = [DateUtils iso8601toDate:dictionary[@"created_at"]];
-        post.likes = dictionary[@"likes"];
-        post.postId = dictionary[@"id"];
-        post.user = [User initWithDictionary:dictionary[@"user"]];
-        return post;
-    }else{
-        return nil;
-    }
+
+- (instancetype) initWithDictionary:(NSDictionary*)dictionary
+{
+	self = [super init];
+	if (self && dictionary)
+	{
+        self.post = dictionary[@"post"];
+        self.createdAt = [DateUtils iso8601toDate:dictionary[@"created_at"]];
+        self.likes = dictionary[@"likes"];
+        self.postId = dictionary[@"id"];
+        self.user = [[User alloc] initWithDictionary:dictionary[@"user"]];
+        if(dictionary[@"comments"]!=nil) {
+            NSMutableArray *temparr = [@[] mutableCopy];
+            for (NSDictionary *dict in dictionary[@"comments"]) {
+                Comment *c = [[Comment alloc] initWithDictionary:dict];
+                [temparr addObject:c];
+            }
+            self.comments = temparr;
+        }
+        return self;
+	} else
+        return  nil;
 }
-//- (instancetype) initWithDictionary:(NSDictionary*)otherDictionary
-//{
-//	self = [super init];
-//	if (self)
-//	{
-//		
-//	}
-//}
 @end

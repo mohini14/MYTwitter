@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4112" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -624,7 +624,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-Jy-7ET">
-                                <rect key="frame" x="156" y="322" width="63" height="25"/>
+                                <rect key="frame" x="156" y="322" width="63" height="15"/>
                                 <color key="backgroundColor" red="0.66907650139999997" green="1" blue="0.30924168530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Delete"/>
                             </button>
@@ -640,7 +640,7 @@
                             <constraint firstAttribute="trailing" secondItem="qfk-Zz-oKL" secondAttribute="trailing" constant="16" id="OQi-ye-3Dt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cXs-Jy-7ET" secondAttribute="trailing" constant="140" id="PBK-30-hTC"/>
                             <constraint firstItem="g3J-MF-3kZ" firstAttribute="top" secondItem="8i4-kB-y6E" secondAttribute="bottom" id="myb-2a-rlx"/>
-                            <constraint firstItem="iee-K9-PcX" firstAttribute="top" secondItem="cXs-Jy-7ET" secondAttribute="bottom" constant="320" id="v3C-N7-T5T"/>
+                            <constraint firstItem="iee-K9-PcX" firstAttribute="top" secondItem="cXs-Jy-7ET" secondAttribute="bottom" constant="330" id="v3C-N7-T5T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WHc-y8-0D5">

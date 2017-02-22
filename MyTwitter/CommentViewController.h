@@ -15,17 +15,20 @@
 #import "Comment.h"
 #import "DateUtils.h"
 
+@class SessionData;
+
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postLabel;
 @property (weak, nonatomic) IBOutlet UITextField *addCommentTextField;
 @property (strong,nonatomic) NSMutableDictionary *dict;
-@property (strong, nonatomic) Post *displayPost;
 @property (strong,nonatomic) NSArray *commentTableData;
 @property(strong,nonatomic) ActivityIndicator *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic, strong) SessionData *sessionData;
+
 - (IBAction)okCommentButtonPressed:(id)sender;
 
 

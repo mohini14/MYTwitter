@@ -46,7 +46,6 @@
     
     NSString *password=self.passwordField.text;
     NSString *confirmpassword=self.confirmPasswordField.text;
-   //creating dict
     NSMutableDictionary *dict=[NSMutableDictionary new];
     dict[@"first_name"]=fname;
     dict[@"last_name"]=lname;
@@ -56,36 +55,23 @@
 
     if(!(([fname isempty])||([lname isempty])||([email isempty])||([password isempty]) ||([confirmpassword isempty]) || [username isempty])){
        if([password isEqualToString:confirmpassword]){
-		   
-		     [self.activityIndicator showLoadingViewMessage:@"signing up"];
-		   [self.activityIndicator startActivityIndicator];
-		 
-        [UserServices register:dict andCallBackMethod:^(BOOL isSuccess,NSDictionary *responseData,NSString *errorMessage){
-			[self.activityIndicator removeLoadedMessage];
+
+           [self.activityIndicator startActivityIndicatorWithMessage:@"signing up"];
+            [UserServices register:dict andCallBackMethod:^(User *user,NSString *errorMessage){
 			[self.activityIndicator stopActivityIndicator];
-            if(isSuccess==TRUE){
+            if(user!=nil){
                 NSString *message=@"Registered Successfully";
                 [AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
             } else{
-                if(errorMessage != nil){
                     [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
-                }else{
-                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:[responseData objectForKey:@"error"] andActionTitle:@"ok" forView:self];
+                }
 
-                }}
-
-
-
-        }];
-
-
-
-
+            }];
        } else{
            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"password and confirm password fields did not match" andActionTitle:@"0k" forView:self];
        }
 
-    }else{
+      }else{
         [AlertManager showAlertPopupWithTitle:@"Oooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
     }
     

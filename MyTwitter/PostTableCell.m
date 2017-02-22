@@ -23,4 +23,6 @@
 
 //-(IBAction)<#selector#>:(id)sender)
 
+- (IBAction)editButtonPressed:(UIButton *)sender {
+}
 @end

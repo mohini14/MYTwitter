@@ -12,7 +12,7 @@
 #import "NSString+Utils.h"
 #import "UserProfile.h"
 #import "User.h"
-
+#import "SessionData.h"
 @class ActivityIndicator;
 
 
@@ -35,7 +35,6 @@
 -(IBAction)unwindFromHelpVC:(UIStoryboardSegue *)unwindSegue;
 
 - (IBAction) switchAction:(UISwitch*)sender;
-- (void)preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData;
 
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue;
 -(void) setKeepMeLoggedInSwitch:(UISwitch *)keepMeLoggedInSwitch;

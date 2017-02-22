@@ -22,6 +22,8 @@
 
 + (instancetype)getInstanceForView:(UIViewController *)viewController;
 
+- (void)startActivityIndicatorWithMessage:(NSString *)msg;
+
 - (void)startActivityIndicator;
 -(void)removeLoadedMessage;
 

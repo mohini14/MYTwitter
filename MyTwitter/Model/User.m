@@ -9,16 +9,19 @@
 @implementation User {
 
 }
-+ (User *)initWithDictionary:(NSDictionary *)dictionary {
-    if(dictionary != nil) {
-        User *user = [User new];
-        user.firstName = dictionary[@"first_name"];
-        user.lastName = dictionary[@"last_name"];
-        user.username = dictionary[@"username"];
-        user.email = dictionary[@"email"];
-        user.displayName = [user.firstName append:[@" " append:user.lastName]];
 
-        return user;
+- (instancetype) initWithDictionary:(NSDictionary*)dictionary
+{
+    self = [super init];
+    if (self && dictionary)
+    {
+        self.firstName = dictionary[@"first_name"];
+        self.lastName = dictionary[@"last_name"];
+        self.username = dictionary[@"username"];
+        self.email = dictionary[@"email"];
+        self.displayName = [self.firstName append:[@" " append:self.lastName]];
+
+        return self;
     } else {
         return nil;
     }

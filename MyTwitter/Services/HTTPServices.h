@@ -8,9 +8,11 @@
 
 @interface HTTPServices : NSObject
 
-+(void) GETWithURL:(NSString *)urlString withCompletionHandler:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completionHandlerCallBack;
-+(void) POSTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary * )dict andWithCompletionHAndler:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completionHandlerCallBack;
+typedef void (^CompletionHandelerBlock)(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage);
 
++(void) GETWithURL:(NSString *)urlString withCompletionHandler:(void (^)(NSInteger, NSDictionary *, NSString *))completionHandlerCallBack;
++(void) POSTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary * )dict andWithCompletionHAndler:(void (^)(NSInteger, NSDictionary *, NSString *))completionHandlerCallBack;
++(void)handleResponse :(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error;
 
 
 

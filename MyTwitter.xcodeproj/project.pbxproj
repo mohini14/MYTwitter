@@ -22,11 +22,12 @@
 		1513DC631E59D97800FB57AC /* PostTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1513DC611E59D97800FB57AC /* PostTableCell.xib */; };
 		1513DC661E5A352300FB57AC /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513DC651E5A352300FB57AC /* ActivityIndicator.m */; };
 		1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 151485791E58564C005F4BA5 /* UserProfile.m */; };
-		151C29231E5D7908002FE72C /* FB.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 151C29221E5D7908002FE72C /* FB.jpeg */; };
 		151C29251E5D7919002FE72C /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151C29241E5D7919002FE72C /* logout.jpg */; };
+		151CE6571E5DE6DF0030BAB5 /* FB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151CE6561E5DE6DF0030BAB5 /* FB.jpg */; };
 		158DF6081E5AFFC600307D07 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */; };
 		158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */; };
 		C04D420B148857EF2CA42AD0 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4556A14D33A953461CA7 /* UserServices.m */; };
+		C04D46EC361E769C0D1FBD9C /* SessionData.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D41412551ACD5F374BA97 /* SessionData.m */; };
 		C04D47E2BE3229B6F86F6F81 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4909E3401D1CA4659701 /* User.m */; };
 		C04D488C940077F0029B2CFE /* HTTPServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D42D5F7CFF47C28FCC0C1 /* HTTPServices.m */; };
 		C04D48CD1B82D27AC38E7E75 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4D2A1818887F5E61903C /* NSString+Utils.m */; };
@@ -64,14 +65,16 @@
 		1513DC651E5A352300FB57AC /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
 		151485781E58564C005F4BA5 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		151485791E58564C005F4BA5 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
-		151C29221E5D7908002FE72C /* FB.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FB.jpeg; path = ../../../../../Downloads/FB.jpeg; sourceTree = "<group>"; };
 		151C29241E5D7919002FE72C /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
+		151CE6561E5DE6DF0030BAB5 /* FB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FB.jpg; sourceTree = "<group>"; };
 		158DF6051E5AFFC600307D07 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		C04D41412551ACD5F374BA97 /* SessionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionData.m; sourceTree = "<group>"; };
 		C04D41A51FA8EBE7B749320B /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		C04D422CF73884FE35E2C932 /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtils.m; sourceTree = "<group>"; };
 		C04D42D5F7CFF47C28FCC0C1 /* HTTPServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServices.m; sourceTree = "<group>"; };
+		C04D43E3991F58D75F927042 /* SessionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionData.h; sourceTree = "<group>"; };
 		C04D4418F3FC4DC677354536 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C04D444D4077B4E0FB576FD5 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		C04D44A7E741AA640F983CB1 /* UserServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserServices.h; sourceTree = "<group>"; };
@@ -164,8 +167,8 @@
 		151485751E5850CC005F4BA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				151CE6561E5DE6DF0030BAB5 /* FB.jpg */,
 				151C29241E5D7919002FE72C /* logout.jpg */,
-				151C29221E5D7908002FE72C /* FB.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -192,6 +195,8 @@
 				C04D41A51FA8EBE7B749320B /* Post.h */,
 				C04D444D4077B4E0FB576FD5 /* Comment.m */,
 				C04D4AC55946CFC9CE9AD7DE /* Comment.h */,
+				C04D41412551ACD5F374BA97 /* SessionData.m */,
+				C04D43E3991F58D75F927042 /* SessionData.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,7 +290,7 @@
 				1513DC631E59D97800FB57AC /* PostTableCell.xib in Resources */,
 				150908351E57316E0023530B /* LaunchScreen.storyboard in Resources */,
 				150908321E57316E0023530B /* Assets.xcassets in Resources */,
-				151C29231E5D7908002FE72C /* FB.jpeg in Resources */,
+				151CE6571E5DE6DF0030BAB5 /* FB.jpg in Resources */,
 				151C29251E5D7919002FE72C /* logout.jpg in Resources */,
 				150908301E57316E0023530B /* Main.storyboard in Resources */,
 				158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */,
@@ -319,6 +324,7 @@
 				C04D4B2846349A26181CA0B1 /* Post.m in Sources */,
 				C04D4EE0AE1514DB1CF836C9 /* DateUtils.m in Sources */,
 				C04D4BD649AED57814808B4F /* Comment.m in Sources */,
+				C04D46EC361E769C0D1FBD9C /* SessionData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

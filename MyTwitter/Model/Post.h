@@ -14,7 +14,8 @@
 @property NSDate *createdAt;
 @property NSNumber *postId;
 @property User *user;
+@property NSArray *comments;//array because multiple comments
 
-+(Post *)initWithDictionary:(NSString *)dictionary;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

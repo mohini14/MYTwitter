@@ -15,7 +15,7 @@
 }
 
 
-+(void) GETWithURL:(NSString *)urlString  withCompletionHandler:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completionHandlerCallBack{
++(void) GETWithURL:(NSString *)urlString  withCompletionHandler:(void (^)(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage))completionHandlerCallBack{
 
 
     NSURL *url=[NSURL URLWithString:urlString];
@@ -23,14 +23,17 @@
     NSURLSession *defaultSession=[NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
     NSURLSessionDataTask *dataTask=[defaultSession dataTaskWithURL:url completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
         NSLog(@"HTTP GET LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
-        completionHandlerCallBack(data,response,error);
+       [HTTPServices handleResponse:data withResponse:response withError:error withCompletionHandler:completionHandlerCallBack];
+
     }];
     [dataTask resume];
 
 }
 
 
-+(void) POSTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary * )dict andWithCompletionHAndler:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completionHandlerCallBack{
+
+
++(void) POSTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary * )dict andWithCompletionHAndler:(void (^)(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage))completionHandlerCallBack{
 
 
     NSURL *url=[NSURL URLWithString:urlString];
@@ -44,8 +47,36 @@
     [urlRequest setValue:@"application/json:charset=UTF_8" forHTTPHeaderField:@"content-type"];
     NSURLSessionDataTask *dataTask= [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
         NSLog(@"HTTP POST LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
-        completionHandlerCallBack(data,response,error);
+        [HTTPServices handleResponse:data withResponse:response withError:error withCompletionHandler:completionHandlerCallBack];
+
     }];
     [dataTask resume];
 }
+
+
+
+
+
++(void) handleResponse :(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error withCompletionHandler:(CompletionHandelerBlock)completionHandlerCallBack{
+
+    NSInteger status=0;
+    NSString *errorMessage=nil;
+    NSDictionary *responseData = nil;
+    if(error!=nil ){//when unable to reach API i.e like internet connection not established
+        status=-1;
+        errorMessage=@"SERVER ERROR";
+    }
+    else{
+        status = [(NSHTTPURLResponse *) response statusCode];
+        NSError *err = nil;
+        responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&err];
+        if(err != nil){
+            errorMessage = @"Something Went Wrong";//when response is not parsable(JSON)
+        }
+    }
+
+    completionHandlerCallBack(status,responseData,errorMessage);
+
+}
+
 @end

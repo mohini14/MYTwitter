@@ -19,10 +19,20 @@
             instance.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
             instance.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
             instance.activityIndicator.center = instance.overlayView.center;
+
+            instance.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 250.0, 400.0, 80.0)];
+            instance.lblTitle.textAlignment = NSTextAlignmentCenter;
+            instance.lblTitle.textColor = [UIColor whiteColor];
+            instance.lblTitle.alpha = 1.0;
+            instance.lblTitle.backgroundColor = [UIColor clearColor];
+            instance.lblTitle.numberOfLines = 1;
 			//instance.overlayView = [[UIView alloc] initWithFrame:screenRect];
-			instance.overlayView.opaque = NO;
+
+            instance.overlayView.opaque = NO;
 			instance.overlayView.backgroundColor = [UIColor darkGrayColor];
 			instance.overlayView.alpha = 0.5;
+            [instance.overlayView addSubview:instance.activityIndicator];
+            [instance.overlayView addSubview:instance.lblTitle];
 
         }
         
@@ -38,51 +48,21 @@
     return instance;
 }
 
--(void)startActivityIndicator{
+-(void)startActivityIndicatorWithMessage:(NSString *)msg{
 
-
-
-
-    [self.overlayView addSubview:self.activityIndicator];
+    self.lblTitle.text = msg;
+    [_overlayView addSubview:_lblTitle];
     [self.activityIndicator startAnimating];
     [self.viewController.view addSubview:self.overlayView];
 }
 
-
-
-
--(void) showLoadingViewMessage:(NSString *)msg
-{
-	
-		
-		self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 250.0, 400.0, 80.0)];
-	
-		_lblTitle.text = msg;
-		_lblTitle.textAlignment = NSTextAlignmentCenter;
-		_lblTitle.textColor = [UIColor whiteColor];
-		_lblTitle.alpha = 1.0;
-		_lblTitle.backgroundColor = [UIColor clearColor];
-		_lblTitle.numberOfLines = 0;
-	
-	
-		[_overlayView addSubview:_lblTitle];
-		
-		
-		
-	//	[self.viewController.view addSubview:_overlayView];
-		
-		
-	
-	
-	
-	
+-(void)startActivityIndicator {
+    self.lblTitle.text = nil;
+    [_overlayView addSubview:_lblTitle];
+    [self.activityIndicator startAnimating];
+    [self.viewController.view addSubview:self.overlayView];
 }
 
--(void)removeLoadedMessage{
-	[_lblTitle removeFromSuperview];
-
-	
-}
 -(void)stopActivityIndicator{
     [self.activityIndicator stopAnimating];
     [self.overlayView removeFromSuperview];

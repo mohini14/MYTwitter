@@ -17,20 +17,24 @@
 #define GET_POST_URL @"/post/<post_id>"
 #define ADD_COMMENT_WITH_POST_ID @"/user/<username>/post/<post id>/comment"
 
+#define RESULT_KEY @"result"
+#define RESULTS_KEY @"results"
+#define ERROR_KEY @"error"
+
 
 
 typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * errorMessage);
 
 @interface UserServices : NSObject
 
-+(void)login:(NSString *)username andPassword:(NSString *)password andCompletionHandler:(void (^)(BOOL isSuccess,NSDictionary *dict,NSString * errorMessage))callBackFromVC;
++(void)login:(NSString *)username andPassword:(NSString *)password andCompletionHandler:(void (^)(User *, NSString *))callBackFromVC;
 
-+(void) register:(NSDictionary *)dict andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *error))callBackFromVC;
++(void) register:(NSDictionary *)dict andCallBackMethod:(void (^)(User *, NSString *))callBackFromVC;
 +(void)passresponse:(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error andCompletionHandler :(CallBackToMainVC )callBackFromVC;
-+(void)getAllPost :(void (^)(BOOL, NSArray *, NSString *))callBackFromUserProfile;
-+(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;;
-+(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSArray *data,NSString *errorMessage))callBackFromCommentVC;
-+(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC;
++(void)getAllPost :(void (^)(NSArray *, NSString *))callBackFromUserProfile;
++(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(Post *, NSString *))callBackFromUserpost;;
++(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(Post *, NSString *))callBackFromCommentVC;
++(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL, NSString *))callBackFromCommentVC;
 
 @end
 

@@ -14,5 +14,5 @@
 @property NSString *username;
 @property NSString *displayName;
 
-+(User *)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

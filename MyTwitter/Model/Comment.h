@@ -18,7 +18,6 @@
 @property User *user;
 @property NSNumber *commentId;
 
-+(Comment *)initWithDictionary:(NSDictionary *)dictionary;
 
-
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

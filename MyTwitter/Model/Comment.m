@@ -12,19 +12,24 @@
 
 }
 
-+(Comment *)initWithDictionary:(NSDictionary *)dictionary {
-    if(dictionary!=nil) {
-        Comment *comment = [Comment new];
-        comment.comment = dictionary[@"comment"];
-        comment.createdAt = [DateUtils iso8601toDate:dictionary[@"created_at"]];
-        comment.user = [User initWithDictionary:dictionary[@"user"]];
-        comment.likes = dictionary[@"likes"];
-        comment.commentId =dictionary[@"id"];
+- (instancetype) initWithDictionary:(NSDictionary*)dictionary
+{
+    self = [super init];
+    if (self && dictionary)
+    {
 
-        return comment;
+        self.comment = dictionary[@"comment"];
+        self.createdAt = [DateUtils iso8601toDate:dictionary[@"created_at"]];
+        self.user = [[User alloc] initWithDictionary:dictionary[@"user"]];
+        self.likes = dictionary[@"likes"];
+        self.commentId =dictionary[@"id"];
+
+        return self;
     } else{
         return nil;
     }
 }
+
+
 
 @end

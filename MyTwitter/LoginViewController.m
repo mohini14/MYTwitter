@@ -18,17 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
     self.activityIndicator=[ActivityIndicator getInstanceForView:self];
-	
-	
-	
-	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-	if([defaults objectForKey:@"username"]!=nil){
-	self.userNameField.text=[defaults objectForKey:@"username"];
-	self.passwordField.text=[defaults objectForKey:@"password"];
-		if(![self.rememberMeSwitch isOn])
-			[self.rememberMeSwitch setOn:YES animated:YES];
-	}
+	[self setFieldsFromNSUserDefaults];
+
 	
 	
 }
@@ -39,42 +32,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#pragma mark-unwind segues to come back to login page
 - (IBAction)loginButtonPressed:(UIButton *)sender {
   //  [ActivityBar activityBarOn :self];
    NSString *username=self.userNameField.text;
@@ -82,53 +39,25 @@
     [[self userNameField] resignFirstResponder];
     [[self passwordField] resignFirstResponder];
 	[self setKeepMeLoggedInSwitch:self.rememberMeSwitch];
-	
-    
     
     if(!([username isempty] || [password isempty])) {
-			[self.activityIndicator showLoadingViewMessage:@"loading"];
-        [self.activityIndicator startActivityIndicator];
-        [UserServices login:username andPassword:password andCompletionHandler:^(BOOL isSuccess, NSDictionary *responseData, NSString *errorMessage) {
-			[self.activityIndicator removeLoadedMessage];
-            [self.activityIndicator stopActivityIndicator];
-            if (isSuccess == TRUE) {
-                 [self preapareForSuccessfullLoginSEaguewithResponseData:responseData];
-//              
-                } else {
-                if (errorMessage != nil) {
-                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
-                } else {
-                    [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:responseData[@"error"] andActionTitle:@"ok" forView:self];
-
-                }
-            }
-        }];
+        [self.activityIndicator startActivityIndicatorWithMessage:@"Loading.."];
+        [UserServices login:username andPassword:password andCompletionHandler: ^(User *user,NSString *errorMsg){
+			[self.activityIndicator stopActivityIndicator];
+			if(errorMsg!=nil){
+				[AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMsg andActionTitle:@"OK" forView:self];
+			} else{
+				[SessionData getInstance].loggedInUser = user;
+//				[AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"you have successfully logged in" andActionTitle:@"OK" forView:self];
+				[self performSegueWithIdentifier:@"loggedInSeague" sender:self];			}
+		}];
 
     }else{
-        [AlertManager showAlertPopupWithTitle:@"ooops" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
+        [AlertManager showAlertPopupWithTitle:@"OOPS" andMessage:@"You cannot leave any field empty" andActionTitle:@"ok" forView:self];
     }
 }
 
 #pragma for segues//
-
--(void) preapareForSuccessfullLoginSEaguewithResponseData:(NSDictionary *)responseData{
-    self.userProfileData = responseData;
-    [self performSegueWithIdentifier:@"loggedInSeague" sender:self];
-
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"loggedInSeague"]){
-		User *user=[User initWithDictionary:self.userProfileData];
-        UserProfile *up = segue.destinationViewController;
-		NSMutableArray *arr=[@[] mutableCopy];
-		[arr addObject:user];
-		up.userarr=[arr copy];
-		up.dict = self.userProfileData;
-    }
-}
-
-
 
 
 
@@ -152,10 +81,24 @@
 	}
 	
 }
+
+
 - (IBAction) switchAction:(UISwitch*)sender
 {
 	
 }
+-(void)setFieldsFromNSUserDefaults{
+	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+	if([defaults objectForKey:@"username"]!=nil){
+		self.userNameField.text=[defaults objectForKey:@"username"];
+		self.passwordField.text=[defaults objectForKey:@"password"];
+		if(![self.rememberMeSwitch isOn])
+			[self.rememberMeSwitch setOn:YES animated:YES];
+	}
+}
+
+
+#pragma unwind segues
 -(IBAction)unwindfromSignUpVC:(UIStoryboardSegue *)unwindSegue{
     //to come back from signup view controller
 }
