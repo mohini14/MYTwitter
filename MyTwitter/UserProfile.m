@@ -54,7 +54,7 @@
     cell.usernameLabel.text=post.user.username;
     cell.postedAtLabel.text=post.createdAt.description;
     cell.postLabel.text=post.post;
-
+	
 
     
     return cell;

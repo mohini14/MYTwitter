@@ -18,7 +18,7 @@
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
 	[dateFormatter setLocale:enUSPOSIXLocale];
-	[dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+	[dateFormatter setDateFormat:@"dd-MM-yyy"   "HH:mm:ss"];
 	
 	NSDate *now = [NSDate date];
 	NSString *iso8601String = [dateFormatter stringFromDate:now];

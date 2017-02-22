@@ -17,16 +17,15 @@
 
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) NSMutableArray *tableData;
-@property (strong, nonatomic) IBOutlet UILabel *postLabel;
-@property (strong, nonatomic) IBOutlet UITextField *addCommentTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postLabel;
+@property (weak, nonatomic) IBOutlet UITextField *addCommentTextField;
 @property (strong,nonatomic) NSMutableDictionary *dict;
 @property (strong, nonatomic) Post *displayPost;
 @property (strong,nonatomic) NSArray *commentTableData;
 @property(strong,nonatomic) ActivityIndicator *activityIndicator;
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)okCommentButtonPressed:(id)sender;
 
 

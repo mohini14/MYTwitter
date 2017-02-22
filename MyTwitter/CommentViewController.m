@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.postLabel.text= _displayPost.post;
     self.nameLabel.text= _displayPost.user.username;//fetching for displaying purpose
     self.tableView.delegate = self;
@@ -76,7 +77,7 @@
     [self.activityIndicator showLoadingViewMessage:@"wait...."];
     [self.activityIndicator startActivityIndicator];
     if(addCommentText.length!=0){
-    [UserServices addComment:addCommentText withPostID:postID withUserName:_displayPost.user.username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+    [UserServices addComment:addCommentText withPostID:postID withUserName:_dict[@"username"] andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
 	   [self.activityIndicator removeLoadedMessage];
 	   [self.activityIndicator stopActivityIndicator];
         if (isSuccess == TRUE) {
@@ -88,7 +89,7 @@
         
         
         } else if (isSuccess == FALSE && errorMessage != nil) {
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+            [AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMessage andActionTitle:@"OK" forView:self];
 	   }
 
     }];

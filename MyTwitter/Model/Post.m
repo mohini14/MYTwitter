@@ -24,5 +24,12 @@
         return nil;
     }
 }
-
+//- (instancetype) initWithDictionary:(NSDictionary*)otherDictionary
+//{
+//	self = [super init];
+//	if (self)
+//	{
+//		
+//	}
+//}
 @end

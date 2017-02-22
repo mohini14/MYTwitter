@@ -128,8 +128,8 @@
 
 +(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSArray *data,NSString *errorMessage))callBackFromCommentVC
 {
-	 	
-		NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
+
+		NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>"withString:postId];
 		[HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		
 			BOOL isSuccess=false;
