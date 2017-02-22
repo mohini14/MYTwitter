@@ -7,6 +7,7 @@
 //
 
 #import "UserProfile.h"
+#import "Post.h"
 
 @interface UserProfile ()
 
@@ -20,7 +21,7 @@
     [super viewDidLoad];
     _nameLabel.text= _dict[@"username"];
     _emailIdLabel.text= _dict[@"email"];
-    self.tableData = [@[] mutableCopy];
+    self.postsTableData = [@[] mutableCopy];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
@@ -34,7 +35,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.tableData.count;
+    return self.postsTableData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,13 +47,12 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PostTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    cell.usernameLabel.text=_tableData[indexPath.row][@"username"];
-   //cell.likesLabel.text=[_tableData[indexPath.row] valueForKey:@"likes"];
-    cell.postedAtLabel.text=_tableData[indexPath.row][@"created_at"];
-    cell.postLabel.text=_tableData[indexPath.row][@"post"];
-   //ell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    //cell.imageView.userInteractionEnabled = NO;
+
+    Post *post = _postsTableData[indexPath.row];
+
+    cell.usernameLabel.text=post.user.username;
+    cell.postedAtLabel.text=post.createdAt.description;
+    cell.postLabel.text=post.post;
 
 
     
@@ -84,24 +84,24 @@
 
 
 -(void)populateData{
-    [UserServices getAllPost:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+    [UserServices getAllPost:^(BOOL isSuccess, NSArray *posts, NSString *errorMessage) {
         if(isSuccess==TRUE){
-            self.tableData = [@[] mutableCopy];
-            for (NSDictionary *obj in data[@"results"]){//for each loop to retrieve data from json;
-                
-                NSDictionary *tempDict=@{
-                        @"post":obj[@"post"],
-                        @"date":obj[@"created_at"],
-                        @"username":obj[@"user"][@"username"],
-                        @"post_id":obj[@"id"],
-						@"likes":obj[@"likes"],
-                        @"created_at":obj[@"created_at"]
-                    
-                };
-                [self.tableData addObject:tempDict];
-            }
-
-                [self.tableView reloadData];
+//            self.postsTableData = [@[] mutableCopy];
+//            for (NSDictionary *obj in data[@"results"]){//for each loop to retrieve data from json;
+//
+//                NSDictionary *tempDict=@{
+//                        @"post":obj[@"post"],
+//                        @"date":obj[@"created_at"],
+//                        @"username":obj[@"user"][@"username"],
+//                        @"post_id":obj[@"id"],
+//						@"likes":obj[@"likes"],
+//                        @"created_at":obj[@"created_at"]
+//
+//                };
+//                [self.postsTableData addObject:tempDict];
+//            }
+            self.postsTableData = posts;
+            [self.tableView reloadData];
         }else if(isSuccess==FALSE && errorMessage!=nil){
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
         } else{
@@ -144,7 +144,7 @@
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
         CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
 		NSMutableDictionary *tempDict=[[NSMutableDictionary alloc]init];
-       tempDict = [[_tableData objectAtIndex:clickedRowNumber] mutableCopy];
+       tempDict = [[_postsTableData objectAtIndex:clickedRowNumber] mutableCopy];
 		NSString *usernameToComments= [_dict valueForKey:@"username"];
 		[tempDict setValue:usernameToComments forKey:@"usernameToComments"];
 		destination.dict = tempDict;

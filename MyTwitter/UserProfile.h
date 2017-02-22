@@ -27,7 +27,7 @@
 @property(strong,nonatomic) NSDictionary *userProfileData;
 @property (strong,nonatomic) UIImageView* getImageNameForRow;
 
-@property(nonatomic, strong) NSMutableArray *tableData;
+@property(nonatomic, strong) NSArray *postsTableData;
 -(void) onClickFromSelectedRowToComments;
 
 //- (IBAction)addNewPostButton:(UIButton *)sender;

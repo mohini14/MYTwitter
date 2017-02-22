@@ -49,7 +49,7 @@
 	   }
     
     
-    //cell.textLabel.text= self.tableData[(NSUInteger) indexPath.row][@"comment"];
+    //cell.textLabel.text= self.postsTableData[(NSUInteger) indexPath.row][@"comment"];
     return cell;
     
     
@@ -111,7 +111,7 @@
                 };
                 [self.tableData addObject:tempDict];
             }
-		 // NSLog(@"username value%@",_tableData[0][@"username"]);
+		 // NSLog(@"username value%@",_postsTableData[0][@"username"]);
             [self.tableView reloadData];
             self.postLabel.text=data[@"result"][@"post"];//updating postlabel field again after populating data
         }else if(isSuccess==FALSE && errorMessage!=nil){

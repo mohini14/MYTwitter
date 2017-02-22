@@ -5,6 +5,7 @@
 
 #import "UserServices.h"
 #import "NSString+Utils.h"
+#import "Post.h"
 
 
 @implementation UserServices {
@@ -67,10 +68,48 @@
 
 }
 
-+(void)getAllPost :(void (^)(BOOL isSuccess,NSDictionary*data,NSString *errorMessage))callBackFromUserProfile{
++(void)getAllPost :(void (^)(BOOL isSuccess, NSArray *posts,NSString *errorMessage))callBackFromUserProfile{
+
+
     NSString *urlString=[HOST append:ALL_POSTS];
+
     [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromUserProfile];
+
+        BOOL isSuccess = false;
+        NSDictionary *responseData;
+        NSString *errorMessage = nil;
+        NSMutableArray *posts = [@[] mutableCopy];
+
+        if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
+            errorMessage=@"Server error";
+
+        }else {
+
+            NSError *error;
+            responseData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            if(error != nil ){
+                errorMessage = error.description;
+            }else{
+                if([(NSHTTPURLResponse *)response statusCode]==200){
+                    for(NSDictionary *obj in responseData[@"results"]){
+                        Post *p = [Post initWithDictionary:obj];
+                        [posts addObject:p];
+                    }
+                    isSuccess = true;
+
+                }else{
+                    errorMessage = responseData[@"error"];
+                }
+            }
+
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSArray *immutablePosts = [posts copy];
+            callBackFromUserProfile(isSuccess, immutablePosts ,errorMessage);
+
+        });
+
+
     }];
     
 }

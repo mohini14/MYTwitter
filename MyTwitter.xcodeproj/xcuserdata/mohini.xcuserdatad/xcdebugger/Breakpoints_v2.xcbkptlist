@@ -127,8 +127,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
+            landmarkName = "@implementation UserProfile"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -294,7 +294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTwitter/UserProfile.m"
@@ -415,7 +415,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -566,7 +566,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTwitter/Services/UserServices.m"
@@ -575,8 +575,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "+addComment:withPostID:withUserName:andCallBackMethod:"
+            landmarkName = "+getAllPost:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27+[UserServices getAllPost:]_block_invoke"
+                  moduleName = "MyTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/Services/UserServices.m"
+                  timestampString = "509397798.024681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1185">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27+[UserServices getAllPost:]_block_invoke_2"
+                  moduleName = "MyTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/Services/UserServices.m"
+                  timestampString = "509397798.025977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1001,8 +1033,8 @@
                   symbolName = "-[CommentViewController populateData]"
                   moduleName = "MyTwitter"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mohini/Desktop/codebase/MyTwitter/MyTwitter/CommentViewController.m"
-                  timestampString = "509364792.37166"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/CommentViewController.m"
+                  timestampString = "509398054.427308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "100"
@@ -1016,8 +1048,8 @@
                   symbolName = "__37-[CommentViewController populateData]_block_invoke"
                   moduleName = "MyTwitter"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mohini/Desktop/codebase/MyTwitter/MyTwitter/CommentViewController.m"
-                  timestampString = "509364792.374683"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/CommentViewController.m"
+                  timestampString = "509398054.428416"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
@@ -1041,6 +1073,85 @@
             endingLineNumber = "101"
             landmarkName = "-populateData"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTwitter/Services/UserServices.m"
+            timestampString = "509397803.94919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "+getAllPost:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTwitter/Services/UserServices.m"
+            timestampString = "509397937.761721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "+getAllPost:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27+[UserServices getAllPost:]_block_invoke"
+                  moduleName = "MyTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/Services/UserServices.m"
+                  timestampString = "509398054.434783"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "1447">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.63"
+                  moduleName = "MyTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/Services/UserServices.m"
+                  timestampString = "509398054.43589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.64"
+                  moduleName = "MyTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohini/codebase/MyTwitter/MyTwitter/Services/UserServices.m"
+                  timestampString = "509398054.436995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
