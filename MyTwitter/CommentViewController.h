@@ -12,6 +12,8 @@
 #import "ActivityIndicator.h"
 #import "CommentTableViewCell.h"
 #import "Post.h"
+#import "Comment.h"
+#import "DateUtils.h"
 
 @interface CommentViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *addCommentTextField;
 @property (strong,nonatomic) NSMutableDictionary *dict;
 @property (strong, nonatomic) Post *displayPost;
-
+@property (strong,nonatomic) NSArray *commentTableData;
 @property(strong,nonatomic) ActivityIndicator *activityIndicator;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

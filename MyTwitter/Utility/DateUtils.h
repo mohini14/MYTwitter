@@ -9,4 +9,5 @@
 @interface DateUtils : NSObject
 
 + (NSDate *)iso8601toDate:(NSString *)dateSTR;
++(NSString*)Datetoiso8601 :(NSDate *)date;
 @end

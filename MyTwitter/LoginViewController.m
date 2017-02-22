@@ -92,13 +92,9 @@
 			[self.activityIndicator removeLoadedMessage];
             [self.activityIndicator stopActivityIndicator];
             if (isSuccess == TRUE) {
-                //NSString *message = @"Login Successful";
-               
-                //[AlertManager showAlertPopupWithTitle:@"Success" andMessage:message andActionTitle:@"ok" forView:self];
                  [self preapareForSuccessfullLoginSEaguewithResponseData:responseData];
 //              
-                
-            } else {
+                } else {
                 if (errorMessage != nil) {
                     [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
                 } else {

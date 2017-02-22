@@ -87,29 +87,13 @@
 -(void)populateData{
     [UserServices getAllPost:^(BOOL isSuccess, NSArray *posts, NSString *errorMessage) {
         if(isSuccess==TRUE){
-//            self.postsTableData = [@[] mutableCopy];
-//            for (NSDictionary *obj in data[@"results"]){//for each loop to retrieve data from json;
-//
-//                NSDictionary *tempDict=@{
-//                        @"post":obj[@"post"],
-//                        @"date":obj[@"created_at"],
-//                        @"username":obj[@"user"][@"username"],
-//                        @"post_id":obj[@"id"],
-//						@"likes":obj[@"likes"],
-//                        @"created_at":obj[@"created_at"]
-//
-//                };
-//                [self.postsTableData addObject:tempDict];
-//            }
             self.postsTableData = posts;
             [self.tableView reloadData];
         }else if(isSuccess==FALSE && errorMessage!=nil){
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
-        } else{
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
-        }
-
-    }];
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+			
+		}
+	}];
 }
 
 
@@ -144,9 +128,11 @@
 
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
         CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
-		NSString *usernameToComments= [_dict valueForKey:@"username"];
+//		NSString *usernameToComments= [_dict valueForKey:@"username"];
         Post *post = _postsTableData[clickedRowNumber];
 		destination.displayPost = post;
+		
+		
 }
 
 }

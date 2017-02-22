@@ -32,7 +32,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.tableData.count;
+    return self.commentTableData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,15 +43,16 @@
 		  cell = [nib objectAtIndex:0];
 
 	   }
-	   if(_tableData.count!=0){//if i tried to access empty array then its giving errori.e if a post does not have comment.
-	   cell.commentLabel.text=_tableData[indexPath.row][@"comments"];
-	   cell.usernameLabel.text=_tableData[indexPath.row][@"username"];
-	   cell.postedatLabel.text=_tableData[indexPath.row][@"created_at"];
+    
+	   Comment *comment=_commentTableData[indexPath.row];
+	   if(_commentTableData.count!=0){//if i tried to access empty array then its giving errori.e if a post does not have comment.
+	   cell.commentLabel.text=comment.comment;
+	   cell.usernameLabel.text=comment.user.username;
+	   cell.postedatLabel.text=[DateUtils Datetoiso8601 : comment.createdAt];
 	   }
     
     
-    //cell.textLabel.text= self.postsTableData[(NSUInteger) indexPath.row][@"comment"];
-    return cell;
+        return cell;
     
     
     
@@ -70,56 +71,49 @@
     
     
     NSString *addCommentText=self.addCommentTextField.text;
-     NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
+    [_addCommentTextField resignFirstResponder];
+    NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
+    [self.activityIndicator showLoadingViewMessage:@"wait...."];
     [self.activityIndicator startActivityIndicator];
+    if(addCommentText.length!=0){
     [UserServices addComment:addCommentText withPostID:postID withUserName:_displayPost.user.username andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
-	   
+	   [self.activityIndicator removeLoadedMessage];
 	   [self.activityIndicator stopActivityIndicator];
         if (isSuccess == TRUE) {
             
-            [self populateData];
-            [AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
-            [[self addCommentTextField]resignFirstResponder];
+		  
+		  [AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
             self.addCommentTextField.text=nil;
+		  [self populateData];
         
         
         } else if (isSuccess == FALSE && errorMessage != nil) {
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
-        } else {
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
-        }
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+	   }
 
     }];
     
-    
+    }else{
+	   [AlertManager showAlertPopupWithTitle:@"OOOOPS" andMessage:@"YOU CANNOT POST AN EMPTY COMMENT" andActionTitle:@"ok" forView:self];
+    }
 }
 
 -(void)populateData{
 
         NSString *postID=[NSString stringWithFormat:@"%@",_displayPost.postId];
-
-    [UserServices getPostForPostID :postID andCallBackMethod:^(BOOL isSuccess, NSDictionary *data, NSString *errorMessage) {
+	   [self.activityIndicator startActivityIndicator];
+	   [self.activityIndicator showLoadingViewMessage:@"loading..."];
+	   [UserServices getPostForPostID :postID andCallBackMethod:^(BOOL isSuccess, NSArray *data, NSString *errorMessage) {
+		  [self.activityIndicator removeLoadedMessage];
+		  [self.activityIndicator stopActivityIndicator];
         if(isSuccess==TRUE){
-            self.tableData = [@[] mutableCopy];
-            for (NSDictionary *obj in data[@"result"][@"comments"]){//for each loop to retrieve data from json;
-
-                NSDictionary *tempDict=@{
-
-                        @"comments":obj[@"comment"],
-                        @"username":obj[@"user"][@"username"],
-                        @"likes":obj[@"likes"],
-				    @"created_at":obj[@"created_at"]
-                };
-                [self.tableData addObject:tempDict];
-            }
-		 // NSLog(@"username value%@",_postsTableData[0][@"username"]);
+		  
+		  self.commentTableData=data;
             [self.tableView reloadData];
-            self.postLabel.text=data[@"result"][@"post"];//updating postlabel field again after populating data
+		  self.postLabel.text=self.displayPost.post;//updating postlabel field again after populating data
         }else if(isSuccess==FALSE && errorMessage!=nil){
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"server error" andActionTitle:@"ok" forView:self];
-        } else{
-            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:@"something went wrong" andActionTitle:@"ok" forView:self];
-        }
+            [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+	   }
 
     }];
 }

@@ -22,9 +22,8 @@
 		1513DC631E59D97800FB57AC /* PostTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1513DC611E59D97800FB57AC /* PostTableCell.xib */; };
 		1513DC661E5A352300FB57AC /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513DC651E5A352300FB57AC /* ActivityIndicator.m */; };
 		1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 151485791E58564C005F4BA5 /* UserProfile.m */; };
-		151CE6511E5CCABF0030BAB5 /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151CE6501E5CCABF0030BAB5 /* logout.jpg */; };
-		151CE6531E5CCACB0030BAB5 /* star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 151CE6521E5CCACB0030BAB5 /* star.jpeg */; };
-		151CE6551E5CCAE70030BAB5 /* FB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151CE6541E5CCAE70030BAB5 /* FB.jpg */; };
+		151C29231E5D7908002FE72C /* FB.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 151C29221E5D7908002FE72C /* FB.jpeg */; };
+		151C29251E5D7919002FE72C /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151C29241E5D7919002FE72C /* logout.jpg */; };
 		158DF6081E5AFFC600307D07 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */; };
 		158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */; };
 		C04D420B148857EF2CA42AD0 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4556A14D33A953461CA7 /* UserServices.m */; };
@@ -65,9 +64,8 @@
 		1513DC651E5A352300FB57AC /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
 		151485781E58564C005F4BA5 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		151485791E58564C005F4BA5 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
-		151CE6501E5CCABF0030BAB5 /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
-		151CE6521E5CCACB0030BAB5 /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpeg; sourceTree = "<group>"; };
-		151CE6541E5CCAE70030BAB5 /* FB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FB.jpg; sourceTree = "<group>"; };
+		151C29221E5D7908002FE72C /* FB.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FB.jpeg; path = ../../../../../Downloads/FB.jpeg; sourceTree = "<group>"; };
+		151C29241E5D7919002FE72C /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
 		158DF6051E5AFFC600307D07 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -166,9 +164,8 @@
 		151485751E5850CC005F4BA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				151CE6521E5CCACB0030BAB5 /* star.jpeg */,
-				151CE6501E5CCABF0030BAB5 /* logout.jpg */,
-				151CE6541E5CCAE70030BAB5 /* FB.jpg */,
+				151C29241E5D7919002FE72C /* logout.jpg */,
+				151C29221E5D7908002FE72C /* FB.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -286,13 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1513DC631E59D97800FB57AC /* PostTableCell.xib in Resources */,
-				151CE6511E5CCABF0030BAB5 /* logout.jpg in Resources */,
 				150908351E57316E0023530B /* LaunchScreen.storyboard in Resources */,
 				150908321E57316E0023530B /* Assets.xcassets in Resources */,
+				151C29231E5D7908002FE72C /* FB.jpeg in Resources */,
+				151C29251E5D7919002FE72C /* logout.jpg in Resources */,
 				150908301E57316E0023530B /* Main.storyboard in Resources */,
-				151CE6551E5CCAE70030BAB5 /* FB.jpg in Resources */,
 				158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */,
-				151CE6531E5CCACB0030BAB5 /* star.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

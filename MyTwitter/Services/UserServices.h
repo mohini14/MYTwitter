@@ -5,6 +5,9 @@
 
 #import <Foundation/Foundation.h>
 #import "HTTPServices.h"
+#import "Post.h"
+#import "Comment.h"
+#import "User.h"
 #define HOST   @"http://ec2-52-38-49-62.us-west-2.compute.amazonaws.com:8000/mytwitter"
 //#define HOST @"http://03a99d4b.ngrok.io/mytwitter"
 #define LOGIN_URL @"/user/login"
@@ -26,7 +29,7 @@ typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * er
 +(void)passresponse:(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error andCompletionHandler :(CallBackToMainVC )callBackFromVC;
 +(void)getAllPost :(void (^)(BOOL, NSArray *, NSString *))callBackFromUserProfile;
 +(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromUserpost;;
-+(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC;
++(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSArray *data,NSString *errorMessage))callBackFromCommentVC;
 +(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC;
 
 @end

@@ -79,24 +79,22 @@
         NSDictionary *responseData;
         NSString *errorMessage = nil;
         NSMutableArray *posts = [@[] mutableCopy];
-
-        if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
+		if(error !=nil || [(NSHTTPURLResponse *)response statusCode]>=500){
             errorMessage=@"Server error";
 
-        }else {
-
-            NSError *error;
+        }else{
+			NSError *error;
             responseData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
             if(error != nil ){
                 errorMessage = error.description;
             }else{
                 if([(NSHTTPURLResponse *)response statusCode]==200){
-                    for(NSDictionary *obj in responseData[@"results"]){
+					isSuccess = true;
+					for(NSDictionary *obj in responseData[@"results"]){
                         Post *p = [Post initWithDictionary:obj];
                         [posts addObject:p];
                     }
-                    isSuccess = true;
-
+					
                 }else{
                     errorMessage = responseData[@"error"];
                 }
@@ -128,13 +126,50 @@
     }];
 }
 
-+(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSDictionary *data,NSString *errorMessage))callBackFromCommentVC
++(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(BOOL isSuccess,NSArray *data,NSString *errorMessage))callBackFromCommentVC
 {
-    NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
-    [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        [self passresponse:data withResponse:response withError:error andCompletionHandler:callBackFromCommentVC];
-    }];
-
+	 	
+		NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
+		[HTTPServices GETWithURL:urlString withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+		
+			BOOL isSuccess=false;
+			NSString *errorMessage=nil;
+			NSDictionary *responsedata;
+			NSMutableArray *postForPostId=[@[]mutableCopy];
+			
+			
+			if(error!=nil && [(NSHTTPURLResponse *)response statusCode]>=500){//detecting server error
+				errorMessage=@"SERVER ERROR";
+				responsedata=nil;
+			}else{
+				NSError *error;
+				responsedata=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+				if(error!=nil){
+					errorMessage=error.description;
+				}else{
+					if([(NSHTTPURLResponse*) response statusCode]==200){
+						isSuccess=true;
+						for(NSDictionary *obj in responsedata[@"result"][@"comments"]){
+							Comment *c=[Comment initWithDictionary:obj];
+							[postForPostId addObject:c];
+							
+						}
+					}else{
+						errorMessage=responsedata[@"error"];
+					}
+				}
+				
+				
+			}
+			
+			
+			dispatch_async(dispatch_get_main_queue(), ^{
+				NSArray *immutableArray=[postForPostId copy];
+				callBackFromCommentVC(isSuccess,immutableArray,errorMessage);
+				
+			});
+		
+		}];
 }
 
 
