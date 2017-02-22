@@ -29,6 +29,8 @@
 @property (strong,nonatomic) NSArray *userarr;
 
 @property(nonatomic, strong) NSArray *postsTableData;
+@property(nonatomic, strong) SessionData *sessionData;
+
 -(void) onClickFromSelectedRowToComments;
 
 //- (IBAction)addNewPostButton:(UIButton *)sender;

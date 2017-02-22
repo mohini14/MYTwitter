@@ -33,9 +33,9 @@
 
 -(void) setup{
 
-    SessionData *sessionData=[SessionData getInstance];
-    self.nameLabel.text= sessionData.loggedInUser.username;
-    self.emailIdLabel.text=sessionData.loggedInUser.email;
+    self.sessionData=[SessionData getInstance];
+    self.nameLabel.text= self.sessionData.loggedInUser.username;
+    self.emailIdLabel.text= self.sessionData.loggedInUser.email;
     self.postsTableData = [@[] mutableCopy];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -62,12 +62,25 @@
     }
 
     // to convert id interface from index of array to particular object that array holds
-    Post *post = _postsTableData[indexPath.row];
+    Post *post = self.postsTableData[indexPath.row];
 
     cell.usernameLabel.text=post.user.username;
     cell.postedAtLabel.text=post.createdAt.description;
     cell.postLabel.text=post.post;
+    if([post.user.username isEqualToString: self.sessionData.loggedInUser.username ]) {
+        cell.editButton.tag = indexPath.row;//to keep info about which button is pressed.
+        [cell.editButton addTarget:self action:@selector(postEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        cell.editButton.hidden = NO;
+    } else{
+        cell.editButton.hidden = YES;
+    }
     return cell;
+}
+
+-(void)postEditButtonPressed:(UIButton *)sender{
+    NSInteger rowClicked = sender.tag;
+    self.sessionData.postToBeEdited = self.postsTableData[rowClicked];
+    [self performSegueWithIdentifier:@"UserProfileToUserPost" sender:self];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,13 +97,8 @@
 }
 
 
-
-
-
 -(void)populateData{
     [UserServices getAllPost:^( NSArray *posts, NSString *errorMessage) {
-        
-        
         if(errorMessage==nil){
             self.postsTableData = posts;
             [self.tableView reloadData];

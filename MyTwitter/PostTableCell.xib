@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="443" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="443" height="199"/>
+                <rect key="frame" x="0.0" y="0.0" width="443" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FB.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-se-efn">
@@ -79,9 +79,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <state key="normal" title="Edit"/>
-                        <connections>
-                            <action selector="editButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="k8S-Ev-3QI"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agG-x5-cJr">
                         <rect key="frame" x="0.0" y="196" width="443" height="3"/>
@@ -120,6 +117,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="editButton" destination="Zeb-Tu-azW" id="XAx-8k-a4S"/>
                 <outlet property="likesLabel" destination="396-ag-tVe" id="mCx-1w-eY9"/>
                 <outlet property="postLabel" destination="cHu-26-MAM" id="QYy-fT-9x3"/>
                 <outlet property="postedAtLabel" destination="K9L-q8-AxA" id="xV3-wr-yL8"/>

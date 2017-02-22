@@ -18,7 +18,11 @@
 @property (strong,nonatomic) ActivityIndicator *activityIndicator;
 
 - (IBAction)saveButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButton;
 
+@property(nonatomic, strong) Post *editablePost;
+
+- (IBAction)deleteButtonPressed:(UIButton *)sender;
 
 
 @end
