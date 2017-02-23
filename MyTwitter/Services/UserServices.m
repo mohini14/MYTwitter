@@ -172,4 +172,52 @@
         });
 
     }];
-}@end
+}
+
+
++(void)updatePost :(NSString *)updatedPost withPostId:(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc{
+	NSDictionary *dict=@{
+						 @"post":updatedPost
+						 };
+
+	NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
+	[HTTPServices PUTWithURL:urlString andWithDictionary:dict andWithCompletionHandler:^(NSInteger statusCode, NSDictionary *responseData, NSString *errorMessage) {
+		NSString *errorMsg=nil;
+		BOOL isSuccess=false;
+		if(statusCode==200){
+			isSuccess=true;
+		}else {
+			errorMsg = errorMessage == nil ? responseData[ERROR_KEY] : errorMessage;
+		}//true when have to show api error
+		dispatch_async(dispatch_get_main_queue(), ^(){
+			callBackFromPostVc(isSuccess,errorMsg );
+		});
+		
+
+		
+	}];
+	
+}
+
+
++(void) DeletePost :(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc{
+	
+	NSString *urlString=[[HOST append:GET_POST_URL]stringByReplacingOccurrencesOfString:@"<post_id>" withString:postId];
+	[HTTPServices DELETEWithURL:urlString withCompletionHandler:^(NSInteger statusCode, NSDictionary *responseData, NSString *errorMessage) {
+		
+		NSString *errorMsg=nil;
+		BOOL isSuccess=false;
+		if(statusCode==200){
+			isSuccess=true;
+		}else {
+			errorMsg = errorMessage == nil ? responseData[ERROR_KEY] : errorMessage;
+		}//true when have to show api error
+		dispatch_async(dispatch_get_main_queue(), ^(){
+			callBackFromPostVc(isSuccess,errorMsg );
+		});
+		
+	}];
+}
+
+
+@end

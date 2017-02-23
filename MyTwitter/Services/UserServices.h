@@ -35,6 +35,8 @@ typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * er
 +(void)submitPost:(NSString *)post withUsername:(NSString *)username andCallBackMethod:(void (^)(Post *, NSString *))callBackFromUserpost;;
 +(void) getPostForPostID:(NSString *)postId andCallBackMethod:(void (^)(Post *, NSString *))callBackFromCommentVC;
 +(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL, NSString *))callBackFromCommentVC;
++(void)updatePost :(NSString *)updatedPost withPostId:(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc;
++(void) DeletePost :(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc;
 
 @end
 

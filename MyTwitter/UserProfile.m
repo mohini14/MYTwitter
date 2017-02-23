@@ -138,7 +138,7 @@
 //    }
 
     if([segue.identifier isEqualToString:@"UserPofileToComment"]){
-        CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
+       // CommentViewController *destination = segue.destinationViewController.childViewControllers[0];
 //		NSString *usernameToComments= [_dict valueForKey:@"username"];
         Post *post = _postsTableData[clickedRowNumber];
         [SessionData getInstance].currentPost=post;

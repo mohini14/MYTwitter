@@ -25,9 +25,8 @@
 - (void)startActivityIndicatorWithMessage:(NSString *)msg;
 
 - (void)startActivityIndicator;
--(void)removeLoadedMessage;
+
 
 - (void)stopActivityIndicator;
--(void) showLoadingViewMessage:(NSString *)msg;
 
 @end

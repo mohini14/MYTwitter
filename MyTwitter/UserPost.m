@@ -56,16 +56,52 @@
                 }
             }];
         }else{
-            [self.activityIndicator startActivityIndicatorWithMessage:@"Updating Your Post"];
-        }
-	}
-	else{
-		[AlertManager showAlertPopupWithTitle:@"oooops" andMessage:@"YOU CANNOT SAVE WITHOUT POSTING" andActionTitle:@"ok" forView:self];
-	}
+			[self.activityIndicator startActivityIndicatorWithMessage:@"Updating Your Post"];
+			NSNumber *temp=self.editablePost.postId;
+			NSString *post_Id = [temp stringValue];
+			[UserServices updatePost:post withPostId:post_Id andWithCallBAckMethod:^(BOOL isSuccess, NSString *errorMessage) {
+				if(isSuccess==true){
+					[AlertManager showAlertPopupWithTitle:@"Success" andMessage:@"YOUR POST UPDATED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^() {
+						[self performSegueWithIdentifier:@"unwindFromUSerPost" sender:self];
+					}                             forView:self
+					 ];
+				}
+				else{
+					[AlertManager showAlertPopupWithTitle:@"failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+				}
+				}];
+				}
+	  }
+		else{
+			[AlertManager showAlertPopupWithTitle:@"oooops" andMessage:@"YOU CANNOT POST EMPTY TEXT" andActionTitle:@"ok" forView:self];
+			}
 	
 }
 
 - (IBAction)deleteButtonPressed:(UIButton *)sender {
-    [self.activityIndicator startActivityIndicatorWithMessage:@"Deleting Your Post"];
+	if(![self.textView.text isempty]){
+		[self.activityIndicator startActivityIndicatorWithMessage:@"Deleting Your Post"];
+		NSNumber *temp=self.editablePost.postId;
+		NSString *post_Id = [temp stringValue];
+		[UserServices DeletePost:post_Id andWithCallBAckMethod:^(BOOL isSuccess, NSString *errorMessage) {
+			[self.activityIndicator stopActivityIndicator];
+			if(isSuccess==true){
+				[AlertManager showAlertPopupWithTitle:@"DELETD" andMessage:@"YOUR POST DELETED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^() {
+					[self performSegueWithIdentifier:@"unwindFromUSerPost" sender:self];
+				}                             forView:self
+				 ];
+			}
+			else{
+				[AlertManager showAlertPopupWithTitle:@"failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+			}
+		}];
+		
+		
+		
+		
+		
+	}else{
+		[AlertManager showAlertPopupWithTitle:@"OOPS" andMessage:@"YOU ARE NOT DELETING A VALID POST" andActionTitle:@"OK" forView:self];
+	}
 }
 @end

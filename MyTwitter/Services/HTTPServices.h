@@ -12,8 +12,8 @@ typedef void (^CompletionHandelerBlock)(NSInteger statusCode,NSDictionary *respo
 
 +(void) GETWithURL:(NSString *)urlString withCompletionHandler:(void (^)(NSInteger, NSDictionary *, NSString *))completionHandlerCallBack;
 +(void) POSTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary * )dict andWithCompletionHAndler:(void (^)(NSInteger, NSDictionary *, NSString *))completionHandlerCallBack;
-+(void)handleResponse :(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error;
+//+(void)handleResponse :(NSData *)data withResponse:(NSURLResponse *)response withError:(NSError *)error;
 
-
-
++(void) PUTWithURL:(NSString *)urlString andWithDictionary:(NSDictionary *)dict andWithCompletionHandler:(void(^)(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage))CompletionHandlerCallBack;
++(void)DELETEWithURL :(NSString *)urlString  withCompletionHandler:(void (^)(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage))completionHandlerCallBack;
 @end
