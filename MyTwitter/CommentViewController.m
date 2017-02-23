@@ -85,7 +85,7 @@
     
     NSString *addCommentText=self.addCommentTextField.text;
     [_addCommentTextField resignFirstResponder];
-    NSString *postID= [NSString stringWithFormat:@"%@",self.sessionData.currentPost.postId];
+    NSString *postID= [@"" append:self.sessionData.currentPost.postId];
     if(![addCommentText isempty]){
         [self.activityIndicator startActivityIndicatorWithMessage:@"adding your comment"];
         [UserServices addComment:addCommentText withPostID:postID withUserName:self.sessionData.loggedInUser.username andCallBackMethod:^(BOOL isSuccess, NSString *errorMessage) {

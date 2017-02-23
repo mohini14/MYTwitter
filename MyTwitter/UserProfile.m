@@ -40,6 +40,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
+    
 
 }
 

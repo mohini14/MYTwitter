@@ -9,5 +9,5 @@
 
 -(NSString *) trim;
 -(BOOL)isempty;
-- (NSString *)append:(NSString *)appendString;
+- (NSString *)append:(NSObject *)appendString;
 @end

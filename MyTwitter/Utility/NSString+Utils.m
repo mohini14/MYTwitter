@@ -26,7 +26,7 @@
     return false;
 }
 
-- (NSString *)append:(NSString *)appendString {
+- (NSString *)append:(NSObject *)appendString {
     NSString *appendedString=[NSString stringWithFormat:@"%@%@",self,appendString];
     return appendedString;
 }
