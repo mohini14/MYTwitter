@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     
+    
    self.activityIndicator= [ActivityIndicator getInstanceForView:self];
     [self setUp];
 }
@@ -39,6 +40,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
+
     
 }
 
@@ -62,10 +64,18 @@
 	   cell.commentLabel.text=comment.comment;
 	   cell.usernameLabel.text=comment.user.username;
 	   cell.postedatLabel.text=[DateUtils Datetoiso8601 : comment.createdAt];
+		  if([comment.user.username isEqualToString:self.sessionData.loggedInUser.username]){
+			 cell.editButton.tag=indexPath.row;
+			 cell.delButton.tag=indexPath.row;
+			 [cell.editButton addTarget:self action:@selector(commentEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+				cell.editButton.hidden = NO;
+			 } else{
+				cell.editButton.hidden = YES;
+				}
+		  
 	   }
-    
-    
-        return cell;
+		  
+		  return cell;
     
     
     
@@ -78,30 +88,76 @@
 }
 
 
+-(void) commentEditButtonPressed:(UIButton *)sender{
+	   NSInteger rowClicked=sender.tag;
+	   self.commentToBeEdited=self.commentTableData[rowClicked];
+	   self.addCommentTextField.text=self.commentToBeEdited.comment;
+		   
+		  
+	   
+	   
+}
 
+
+-(void)delButtonActions:(UIButton *)sender{
+    
+    NSInteger rowNumber=sender.tag;
+    self.commentToBeEdited=self.commentTableData[rowNumber];
+	   [self.activityIndicator startActivityIndicatorWithMessage:@"Deleting Your Comment"];
+	   NSNumber *temp=self.commentToBeEdited.commentId;
+	   NSString *post_Id = [temp stringValue];
+	   [UserServices deleteComment:post_Id andWithCallBAckMethod:^(BOOL isSuccess, NSString *errorMessage) {
+		  [self.activityIndicator stopActivityIndicator];
+		  if(isSuccess==true){
+				[AlertManager showAlertPopupWithTitle:@"DELETD" andMessage:@"YOUR COMMENT DELETED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^() {
+				    [self performSegueWithIdentifier:@"unwindFromUSerPost" sender:self];
+				}                             forView:self
+				 ];
+		  }
+		  else{
+				[AlertManager showAlertPopupWithTitle:@"failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
+		  }
+	   }];
+	   
+	   }
 - (IBAction)okCommentButtonPressed:(id)sender {
     
-    
-    
+ 
     NSString *addCommentText=self.addCommentTextField.text;
     [_addCommentTextField resignFirstResponder];
-    NSString *postID= [@"" append:self.sessionData.currentPost.postId];
+    NSString *postID = [@"" append:self.sessionData.currentPost.postId];
     if(![addCommentText isempty]){
-        [self.activityIndicator startActivityIndicatorWithMessage:@"adding your comment"];
-        [UserServices addComment:addCommentText withPostID:postID withUserName:self.sessionData.loggedInUser.username andCallBackMethod:^(BOOL isSuccess, NSString *errorMessage) {
-	   [self.activityIndicator stopActivityIndicator];
-        if (isSuccess == TRUE) {
-            [AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
-            self.addCommentTextField.text=nil;
-		    [self populateData];
-        } else {
-            [AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMessage andActionTitle:@"OK" forView:self];
-	   }}];
+	   if(self.commentToBeEdited==nil){
+		  [self.activityIndicator startActivityIndicatorWithMessage:@"adding your comment"];
+		  [UserServices addComment:addCommentText withPostID:postID withUserName:self.sessionData.loggedInUser.username andCallBackMethod:^(BOOL isSuccess, NSString *errorMessage) {
+		  [self.activityIndicator stopActivityIndicator];
+			 if (isSuccess == TRUE) {
+				[AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"YOU HAVE SUCCESSFULLY ADDED COMMENT" andActionTitle:@"ok" forView:self];
+		  
+			 } else {
+				[AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMessage andActionTitle:@"OK" forView:self];
+			 }}];
+	   }else{
+		  [self.activityIndicator startActivityIndicator];
+		  NSString *postID=[self.commentToBeEdited.commentId stringValue];
+		  [UserServices updateComment:addCommentText withPostId:postID andWithCallBAckMethod:^(BOOL isSuccess, NSString *errorMessage) {
+			 [self.activityIndicator stopActivityIndicator];
+		  if(isSuccess==true){
+			 [AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"COMMENT SUCCESSFULLY UPDATED" andActionTitle:@"ok" forView:self];
+		  }else{
+				[AlertManager showAlertPopupWithTitle:@"FAILED" andMessage:errorMessage andActionTitle:@"OK" forView:self];
+			 }
+			 }];
+	   }
+	   self.addCommentTextField.text=nil;
+	   [self populateData];
     }else{
 	   [AlertManager showAlertPopupWithTitle:@"OOOOPS" andMessage:@"YOU CANNOT POST AN EMPTY COMMENT" andActionTitle:@"ok" forView:self];
     }
+    
+    
+    
 }
-
 -(void)populateData{
 
         NSString *postID=[NSString stringWithFormat:@"%@",self.sessionData.currentPost.postId];

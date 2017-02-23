@@ -23,7 +23,7 @@
 		1513DC661E5A352300FB57AC /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513DC651E5A352300FB57AC /* ActivityIndicator.m */; };
 		1514857A1E58564C005F4BA5 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 151485791E58564C005F4BA5 /* UserProfile.m */; };
 		151C29251E5D7919002FE72C /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151C29241E5D7919002FE72C /* logout.jpg */; };
-		151CE6571E5DE6DF0030BAB5 /* FB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151CE6561E5DE6DF0030BAB5 /* FB.jpg */; };
+		154596741E5EFDED00F79037 /* FB.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 154596731E5EFDED00F79037 /* FB.jpeg */; };
 		158DF6081E5AFFC600307D07 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */; };
 		158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */; };
 		C04D420B148857EF2CA42AD0 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C04D4556A14D33A953461CA7 /* UserServices.m */; };
@@ -66,7 +66,7 @@
 		151485781E58564C005F4BA5 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		151485791E58564C005F4BA5 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		151C29241E5D7919002FE72C /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
-		151CE6561E5DE6DF0030BAB5 /* FB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FB.jpg; sourceTree = "<group>"; };
+		154596731E5EFDED00F79037 /* FB.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FB.jpeg; sourceTree = "<group>"; };
 		158DF6051E5AFFC600307D07 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		158DF6061E5AFFC600307D07 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		158DF6071E5AFFC600307D07 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		151485751E5850CC005F4BA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				151CE6561E5DE6DF0030BAB5 /* FB.jpg */,
+				154596731E5EFDED00F79037 /* FB.jpeg */,
 				151C29241E5D7919002FE72C /* logout.jpg */,
 			);
 			name = Images;
@@ -290,7 +290,7 @@
 				1513DC631E59D97800FB57AC /* PostTableCell.xib in Resources */,
 				150908351E57316E0023530B /* LaunchScreen.storyboard in Resources */,
 				150908321E57316E0023530B /* Assets.xcassets in Resources */,
-				151CE6571E5DE6DF0030BAB5 /* FB.jpg in Resources */,
+				154596741E5EFDED00F79037 /* FB.jpeg in Resources */,
 				151C29251E5D7919002FE72C /* logout.jpg in Resources */,
 				150908301E57316E0023530B /* Main.storyboard in Resources */,
 				158DF6091E5AFFC600307D07 /* CommentTableViewCell.xib in Resources */,

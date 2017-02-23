@@ -7,6 +7,7 @@
 
 @class User;
 @class Post;
+#import "Comment.h"
 
 
 @interface SessionData : NSObject
@@ -16,6 +17,7 @@
 @property(nonatomic, strong) Post *currentPost;
 
 @property(nonatomic, strong) Post *postToBeEdited;
+
 
 +(instancetype) getInstance;
 @end

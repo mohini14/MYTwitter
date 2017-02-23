@@ -16,6 +16,7 @@
 #define NEW_POST_URL @"/user/<username>/post"
 #define GET_POST_URL @"/post/<post_id>"
 #define ADD_COMMENT_WITH_POST_ID @"/user/<username>/post/<post id>/comment"
+#define EDIT_COMMENT_URL @"/comment/id"
 
 #define RESULT_KEY @"result"
 #define RESULTS_KEY @"results"
@@ -37,6 +38,8 @@ typedef void(^CallBackToMainVC) (BOOL isSuccess,NSDictionary *dict,NSString * er
 +(void) addComment :(NSString*)comment withPostID:(NSString *)postId withUserName:(NSString *)userName  andCallBackMethod:(void (^)(BOOL, NSString *))callBackFromCommentVC;
 +(void)updatePost :(NSString *)updatedPost withPostId:(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc;
 +(void) DeletePost :(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromPostVc;
++(void) deleteComment :(NSString *)commentId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromCommentVc;
++(void)updateComment :(NSString *)updatedComment withPostId:(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromCommentVc;
 
 @end
 

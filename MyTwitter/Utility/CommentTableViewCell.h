@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommentViewController.h"
+
 
 @interface CommentTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *postedatLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak,nonatomic) IBOutlet UIButton *editButton;
+@property (weak,nonatomic) IBOutlet UIButton *delButton;
+-(IBAction)delButtonPressed:(id)sender;
 
 @end

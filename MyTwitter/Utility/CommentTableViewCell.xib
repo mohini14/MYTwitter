@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COk-hA-D9f">
-                        <rect key="frame" x="116" y="51" width="196" height="20"/>
+                        <rect key="frame" x="116" y="51" width="166" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="e77-4m-Qf5"/>
                         </constraints>
@@ -48,7 +48,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostedatLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCP-pa-beR">
-                        <rect key="frame" x="108" y="79" width="212" height="20"/>
+                        <rect key="frame" x="108" y="78" width="212" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="jbo-4W-uSA"/>
                         </constraints>
@@ -57,7 +57,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posated at :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGL-db-9pM">
-                        <rect key="frame" x="0.0" y="79" width="100" height="20"/>
+                        <rect key="frame" x="0.0" y="78" width="100" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="SOI-7j-fFA"/>
                             <constraint firstAttribute="height" constant="20" id="uhz-JJ-heu"/>
@@ -77,18 +77,39 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBt-wR-9wX">
+                        <rect key="frame" x="282" y="51" width="38" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="PnM-PO-2fb"/>
+                        </constraints>
+                        <state key="normal" title="edit"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLv-wy-vNT">
+                        <rect key="frame" x="290" y="82.5" width="30" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="YBG-DO-X4G"/>
+                        </constraints>
+                        <state key="normal" title="Del"/>
+                        <connections>
+                            <action selector="delButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HPu-wc-1bp"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="uBt-wR-9wX" firstAttribute="leading" secondItem="COk-hA-D9f" secondAttribute="trailing" id="1rB-Fa-Tz0"/>
                     <constraint firstItem="COk-hA-D9f" firstAttribute="top" secondItem="5UK-I0-Hpf" secondAttribute="bottom" constant="1" id="55i-vx-1xg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="COk-hA-D9f" secondAttribute="trailing" id="8LU-c6-Pja"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="COk-hA-D9f" secondAttribute="trailing" constant="30" id="8LU-c6-Pja"/>
                     <constraint firstItem="5UK-I0-Hpf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9nb-C2-kmu"/>
+                    <constraint firstAttribute="bottom" secondItem="fLv-wy-vNT" secondAttribute="bottom" constant="8" id="ArI-lb-5tc"/>
                     <constraint firstAttribute="bottom" secondItem="KCP-pa-beR" secondAttribute="bottom" constant="2" id="DHs-JA-keh"/>
                     <constraint firstAttribute="trailing" secondItem="KCP-pa-beR" secondAttribute="trailing" id="DSm-u3-JuV"/>
                     <constraint firstItem="5UK-I0-Hpf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FNe-Pt-QXs"/>
                     <constraint firstItem="soI-72-jDh" firstAttribute="top" secondItem="5UK-I0-Hpf" secondAttribute="bottom" constant="2" id="GUL-gF-Mrk"/>
+                    <constraint firstAttribute="trailing" secondItem="uBt-wR-9wX" secondAttribute="trailing" id="P15-OW-fU5"/>
                     <constraint firstAttribute="trailing" secondItem="5UK-I0-Hpf" secondAttribute="trailing" id="TsB-Eu-FqP"/>
                     <constraint firstItem="soI-72-jDh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ubu-7w-Hqy"/>
+                    <constraint firstAttribute="trailing" secondItem="fLv-wy-vNT" secondAttribute="trailing" id="WIM-Wa-Nc2"/>
                     <constraint firstAttribute="bottom" secondItem="c21-BE-6iZ" secondAttribute="bottom" id="bRs-u0-kkc"/>
                     <constraint firstItem="COk-hA-D9f" firstAttribute="leading" secondItem="soI-72-jDh" secondAttribute="trailing" constant="8" id="bph-i2-kNr"/>
                     <constraint firstItem="c21-BE-6iZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bzD-Ie-9pM"/>
@@ -96,14 +117,17 @@
                     <constraint firstAttribute="bottom" secondItem="wGL-db-9pM" secondAttribute="bottom" constant="2" id="gm2-gZ-EU3"/>
                     <constraint firstItem="wGL-db-9pM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j6u-yG-2Hy"/>
                     <constraint firstItem="KCP-pa-beR" firstAttribute="leading" secondItem="wGL-db-9pM" secondAttribute="trailing" constant="8" id="mIB-wY-AJL"/>
+                    <constraint firstItem="uBt-wR-9wX" firstAttribute="top" secondItem="5UK-I0-Hpf" secondAttribute="bottom" constant="1" id="syI-cd-ha9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="commentLabel" destination="5UK-I0-Hpf" id="nVH-5T-Q7X"/>
+                <outlet property="delButton" destination="fLv-wy-vNT" id="JbR-na-ut8"/>
+                <outlet property="editButton" destination="uBt-wR-9wX" id="IbG-hf-Izx"/>
                 <outlet property="postedatLabel" destination="KCP-pa-beR" id="ibL-tc-6Bw"/>
                 <outlet property="usernameLabel" destination="COk-hA-D9f" id="aWW-oC-dSp"/>
             </connections>
-            <point key="canvasLocation" x="32" y="58.5"/>
+            <point key="canvasLocation" x="-314" y="-61.5"/>
         </tableViewCell>
     </objects>
 </document>

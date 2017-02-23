@@ -21,4 +21,9 @@
     // Configure the view for the selected state
 }
 
+-(IBAction)delButtonPressed:(UIButton *)sender{
+	CommentViewController *obj=[CommentViewController new];
+	[obj delButtonActions:self.delButton];
+}
+
 @end

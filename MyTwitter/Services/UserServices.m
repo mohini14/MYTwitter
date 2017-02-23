@@ -220,4 +220,50 @@
 }
 
 
++(void) deleteComment :(NSString *)commentId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromCommentVc{
+	
+	NSString *urlString=[[HOST append:EDIT_COMMENT_URL]stringByReplacingOccurrencesOfString:@"id" withString:commentId];
+	[HTTPServices DELETEWithURL:urlString withCompletionHandler:^(NSInteger statusCode, NSDictionary *responseData, NSString *errorMessage) {
+		
+		NSString *errorMsg=nil;
+		BOOL isSuccess=false;
+		if(statusCode==200){
+			isSuccess=true;
+		}else {
+			errorMsg = errorMessage == nil ? responseData[ERROR_KEY] : errorMessage;
+		}//true when have to show api error
+		dispatch_async(dispatch_get_main_queue(), ^(){
+			callBackFromCommentVc(isSuccess,errorMsg );
+		});
+		
+	}];
+}
+
+
++(void)updateComment :(NSString *)updatedComment withPostId:(NSString *)postId andWithCallBAckMethod:(void (^)(BOOL isSuccess,NSString *errorMessage))callBackFromCommentVc{
+	NSDictionary *dict=@{
+						 @"comment":updatedComment
+						 };
+	
+	NSString *urlString=[[HOST append:EDIT_COMMENT_URL]stringByReplacingOccurrencesOfString:@"id" withString:postId];
+	[HTTPServices PUTWithURL:urlString andWithDictionary:dict andWithCompletionHandler:^(NSInteger statusCode, NSDictionary *responseData, NSString *errorMessage) {
+		NSString *errorMsg=nil;
+		BOOL isSuccess=false;
+		if(statusCode==200){
+			isSuccess=true;
+		}else {
+			errorMsg = errorMessage == nil ? responseData[ERROR_KEY] : errorMessage;
+		}//true when have to show api error
+		dispatch_async(dispatch_get_main_queue(), ^(){
+			callBackFromCommentVc(isSuccess,errorMsg );
+		});
+		
+		
+		
+	}];
+	
+}
+
+
+
 @end

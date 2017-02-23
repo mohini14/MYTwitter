@@ -64,6 +64,7 @@
 	[urlRequest setHTTPBody:nsPutData];
 	[urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-Type"];
 	NSURLSessionDataTask *dataTask=[defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * data, NSURLResponse *response, NSError *error) {
+		 NSLog(@"HTTPPUT LOG url:%@, data:%@, response:%@, error:%@", url.description, data.description, response.description, error.description);
 		[HTTPServices handleResponse:data withResponse:response withError:error withCompletionHandler:CompletionHandlerCallBack];
 	}];
 	[dataTask resume];
