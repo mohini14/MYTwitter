@@ -68,9 +68,13 @@
 			 cell.editButton.tag=indexPath.row;
 			 cell.delButton.tag=indexPath.row;
 			 [cell.editButton addTarget:self action:@selector(commentEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+			 [cell.delButton addTarget:self action:@selector(delButtonActions:) forControlEvents:UIControlEventTouchUpInside];
 				cell.editButton.hidden = NO;
+				cell.delButton.hidden=NO;
 			 } else{
 				cell.editButton.hidden = YES;
+				cell.delButton.hidden=YES;
+				
 				}
 		  
 	   }
@@ -109,15 +113,13 @@
 	   [UserServices deleteComment:post_Id andWithCallBAckMethod:^(BOOL isSuccess, NSString *errorMessage) {
 		  [self.activityIndicator stopActivityIndicator];
 		  if(isSuccess==true){
-				[AlertManager showAlertPopupWithTitle:@"DELETD" andMessage:@"YOUR COMMENT DELETED SUCCESSFULLY" andActionTitle:@"ok" withBlock:^() {
-				    [self performSegueWithIdentifier:@"unwindFromUSerPost" sender:self];
-				}                             forView:self
-				 ];
+				[AlertManager showAlertPopupWithTitle:@"SUCCESS" andMessage:@"DELETED SUCCESFULLY" andActionTitle:@"OK" forView:self];
 		  }
 		  else{
 				[AlertManager showAlertPopupWithTitle:@"failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
 		  }
 	   }];
+    [self populateData];
 	   
 	   }
 - (IBAction)okCommentButtonPressed:(id)sender {

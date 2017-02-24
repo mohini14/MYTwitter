@@ -29,14 +29,9 @@
 @property (strong,nonatomic) Comment *commentToBeEdited;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) SessionData *sessionData;
-
-- (IBAction)okCommentButtonPressed:(id)sender;
-
 -(void)delButtonActions:(UIButton *)sender;
 
-
-
-
+- (IBAction)okCommentButtonPressed:(id)sender;
 -(void)populateData;
 
 

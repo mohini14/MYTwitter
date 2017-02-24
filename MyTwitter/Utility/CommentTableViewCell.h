@@ -17,6 +17,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak,nonatomic) IBOutlet UIButton *editButton;
 @property (weak,nonatomic) IBOutlet UIButton *delButton;
--(IBAction)delButtonPressed:(id)sender;
 
 @end
