@@ -21,7 +21,10 @@
     [view presentViewController:alertController animated:YES completion:nil];
 }
 
-
++ (void) showAlertWithOKButtonAndMessage:(NSString*)msg OnVC:(UIViewController*)vc
+{
+	[AlertManager showAlertPopupWithTitle:@"MyTwitter" andMessage:msg andActionTitle:@"OK" forView:vc];
+}
 + (BOOL)validateEmail:(NSString *)inputText {
     NSString *emailRegex = @"[A-Z0-9a-z][A-Z0-9a-z._%+-]*@[A-Za-z0-9][A-Za-z0-9.-]*\\.[A-Za-z]{2,6}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];

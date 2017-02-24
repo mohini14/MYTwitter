@@ -164,6 +164,8 @@
 
         NSString *postID=[NSString stringWithFormat:@"%@",self.sessionData.currentPost.postId];
 	   [self.activityIndicator startActivityIndicatorWithMessage:@"loading comments"];
+    
+//	   __weak typeof(self) weakSelf = self;
 	   [UserServices getPostForPostID :postID andCallBackMethod:^(Post *post, NSString *errorMessage) {
        [self.activityIndicator stopActivityIndicator];
         if(post!=nil){
@@ -178,7 +180,6 @@
 
     }];
 }
-
 
 
 @end

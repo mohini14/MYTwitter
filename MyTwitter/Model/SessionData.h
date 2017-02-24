@@ -18,6 +18,8 @@
 
 @property(nonatomic, strong) Post *postToBeEdited;
 
+@property(nonatomic, strong) NSString* userName;
+@property(nonatomic, strong) NSString* password;
 
 +(instancetype) getInstance;
 @end

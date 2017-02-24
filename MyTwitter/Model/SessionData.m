@@ -25,6 +25,24 @@
     }
     return sharedInstance;
 }
+- (instancetype)init
+{
+	self = [super init];
+	if (self)
+	{
+		NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+		_userName=[defaults objectForKey:@"username"];
+		_password=[defaults objectForKey:@"password"];
 
+	}
+	return self;
+}
 
+- (void)setUserName:(NSString *)userName
+{
+	_userName = userName;
+	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+	[defaults setValue:userName forKey:@"username"];
+	[defaults synchronize];
+}
 @end

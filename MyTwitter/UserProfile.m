@@ -36,7 +36,6 @@
     self.sessionData=[SessionData getInstance];
     self.nameLabel.text= self.sessionData.loggedInUser.username;
     self.emailIdLabel.text= self.sessionData.loggedInUser.email;
-    self.postsTableData = [@[] mutableCopy];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self populateData];
@@ -44,8 +43,8 @@
 
 }
 
-
-#pragma tableViewDelegates
+#pragma mark -
+#pragma mark - tableViewDelegates
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.postsTableData.count;
 }
@@ -100,10 +99,12 @@
 
 -(void)populateData{
     [UserServices getAllPost:^( NSArray *posts, NSString *errorMessage) {
-        if(errorMessage==nil){
+        if(errorMessage==nil)
+		{
             self.postsTableData = posts;
             [self.tableView reloadData];
-        }else 
+        }
+		else
             [AlertManager showAlertPopupWithTitle:@"Failed" andMessage:errorMessage andActionTitle:@"ok" forView:self];
 			
 		}];

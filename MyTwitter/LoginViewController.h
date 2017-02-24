@@ -20,7 +20,6 @@
 
 
 @property (strong, nonatomic) IBOutlet UITextField *userNameField;
-
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
 @property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;

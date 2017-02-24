@@ -91,7 +91,7 @@
     NSString *urlString=[HOST append:ALL_POSTS];
 
     [HTTPServices GETWithURL:urlString withCompletionHandler:^(NSInteger statusCode,NSDictionary *responseData,NSString *errorMessage) {
-        NSMutableArray *posts = [@[] mutableCopy];
+        NSMutableArray *posts = [[NSMutableArray alloc] init];
         NSString *errorMsg=nil;
         if(statusCode==200){
             for(NSDictionary *obj in responseData[RESULTS_KEY]){

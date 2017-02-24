@@ -57,7 +57,7 @@
     }
 }
 
-#pragma for segues//
+#pragma mark -for segues//
 
 
 

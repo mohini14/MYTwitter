@@ -10,6 +10,7 @@
 @interface AlertManager : NSObject
 
 + (void)showAlertPopupWithTitle:(NSString *)title andMessage:(NSString *)message andActionTitle:(NSString *)actionTitle forView:(UIViewController *)view;
++ (void) showAlertWithOKButtonAndMessage:(NSString*)msg OnVC:(UIViewController*)vc;
 
 + (BOOL)validateEmail:(NSString *)inputText ;
 
